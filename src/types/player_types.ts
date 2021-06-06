@@ -6,6 +6,7 @@ export interface Metadata {
   videoControlsContainerSelectorString: string;
   injectMenusButtonsReferenceNodeSelectorString: string;
   seekBarContainerSelectorString: string;
+  seekBarContainerSelectorStringMobile?: string;
   player_urls: string[];
 }
 
@@ -50,9 +51,10 @@ export interface Player {
 
   /**
    * Removes a skip time from the player
-   * @param skipTime Skip time to remove
+   * @param skipId Skip id of the skip time to remove
+   * @param isPreview Optional, if true, remove all the preview skip times
    */
-  removeSkipTime(skipTime: SkipTimeType): void;
+  removeSkipTime(skipId: string, isPreview?: boolean): void;
 
   /**
    * Resets player state
