@@ -1,24 +1,38 @@
 {
   "variant": "jw",
-  "videoContainerSelectorString": "Video Player",
-  "videoControlsContainerSelectorString": "jw-controlbar jw-reset",
-  "injectMenusButtonsReferenceNodeSelectorString": "Settings",
-  "seekBarContainerSelectorString": "Seek",
-  "player_urls": [
+  "playerUrls": [
+    "*://*.pstream.net/e/*",
     "*://*.streamhd.cc/*",
     "*://cloud9.to/*",
     "*://fcdn.stream/*",
+    "*://fembed-hd.com/*",
     "*://gogo-play.net/*",
     "*://gogo-play.tv/*",
+    "*://gogoplay.io/*",
+    "*://gogoplay1.com/*",
     "*://kimanime.ru/AnimeIframe/*",
     "*://mcloud.to/*",
     "*://mcloud2.to/*",
+    "*://mzcloud.life/*",
+    "*://rapid-cloud.ru/*",
     "*://sbembed.com/*",
     "*://sbplay.org/*",
+    "*://sbplay2.com/*",
     "*://sbvideo.net/*",
     "*://streamani.net/*",
     "*://streamsb.net/*",
+    "*://videovard.sx/*",
     "*://vidstream.pro/*",
-    "*://vidstreamz.online/*"
-  ]
+    "*://vidstreamingcdn.com/*",
+    "*://vidstreamz.online/*",
+    "*://watchsb.com/*"
+  ],
+  "selectorStrings": {
+    "default": {
+      "videoContainerSelectorString": "Video Player",
+      "videoControlsContainerSelectorString": "jw-controlbar jw-reset",
+      "injectMenusButtonsReferenceNodeSelectorString": "Settings",
+      "seekBarContainerSelectorString": "Seek"
+    }
+  }
 }

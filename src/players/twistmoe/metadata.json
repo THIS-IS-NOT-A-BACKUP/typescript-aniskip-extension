@@ -1,8 +1,12 @@
 {
   "variant": "twistmoe",
-  "videoContainerSelectorString": "AT-player",
-  "videoControlsContainerSelectorString": "controls",
-  "seekBarContainerSelectorString": "slider seeker",
-  "injectMenusButtonsReferenceNodeSelectorString": "theater show-on-extended",
-  "player_urls": ["*://twist.moe/*"]
+  "playerUrls": ["*://twist.moe/*"],
+  "selectorStrings": {
+    "default": {
+      "videoContainerSelectorString": "AT-player",
+      "videoControlsContainerSelectorString": "controls",
+      "seekBarContainerSelectorString": "slider seeker",
+      "injectMenusButtonsReferenceNodeSelectorString": "theater show-on-extended"
+    }
+  }
 }

@@ -1,10 +1,7 @@
 {
   "variant": "plyr",
-  "videoContainerSelectorString": "plyr__video-wrapper",
-  "videoControlsContainerSelectorString": "plyr__controls",
-  "seekBarContainerSelectorString": "plyr__progress",
-  "injectMenusButtonsReferenceNodeSelectorString": "plyr__controls__item plyr__menu",
-  "player_urls": [
+  "playerUrls": [
+    "*://*.vvid.cc/*",
     "*://akane-shinjou.github.io/*",
     "*://akaneshinjou.github.io/play/*",
     "*://animixplay.to/api/*",
@@ -12,7 +9,18 @@
     "*://aniwatch.me/*",
     "*://jzscuqezoqkcpvy.win/*",
     "*://kwik.cx/e/*",
+    "*://scloud.online/*",
+    "*://stape.fun/*",
     "*://storage.googleapis.com/*",
+    "*://streamta.site/*",
     "*://streamtape.com/*"
-  ]
+  ],
+  "selectorStrings": {
+    "default": {
+      "videoContainerSelectorString": "plyr__video-wrapper",
+      "videoControlsContainerSelectorString": "plyr__controls",
+      "seekBarContainerSelectorString": "plyr__progress",
+      "injectMenusButtonsReferenceNodeSelectorString": "plyr__controls__item plyr__menu"
+    }
+  }
 }

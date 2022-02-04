@@ -1,7 +1,21 @@
+import { useEffect, useState } from 'react';
+
 /**
- * Returns true if a mobile browser is detected.
+ * Returns if the browser is in full screen.
  */
-export const isMobileCheck = (): boolean =>
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+export const useCheckIsFullscreen = (): { isFullscreen: boolean } => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const fullscreenHandler = (): void => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', fullscreenHandler);
+
+    return (): void =>
+      document.removeEventListener('fullscreenchange', fullscreenHandler);
+  }, [setIsFullscreen]);
+
+  return { isFullscreen };
+};

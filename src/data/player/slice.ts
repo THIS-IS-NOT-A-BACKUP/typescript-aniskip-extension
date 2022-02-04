@@ -1,25 +1,30 @@
 import { createSlice, PayloadAction, Selector } from '@reduxjs/toolkit';
-import { SkipTime } from '../../api';
-import { StateSlice } from '../types';
-import { PlayerState } from './types';
+import { PreviewSkipTime, SkipTime } from '../../api';
+import { StateSlice } from '../../utils/types';
+import {
+  KeyboardEventListenerType,
+  PlayerState,
+  PreviewSkipTimeUpdatedPayload,
+} from './types';
 
 /**
  * Initial state.
  */
 const initialPlayerState: PlayerState = {
-  isReady: false,
+  previewSkipTime: undefined,
   skipTimes: [],
   isSubmitMenuVisible: false,
   isVoteMenuVisible: false,
+  playerControlsListenerType: 'keydown',
 };
 
 /**
  * Selectors.
  */
-export const selectIsPlayerReady: Selector<
+export const selectPreviewSkipTime: Selector<
   StateSlice<PlayerState, 'player'>,
-  boolean
-> = (state) => state.player.isReady;
+  PreviewSkipTime | undefined
+> = (state) => state.player.previewSkipTime;
 
 export const selectSkipTimes: Selector<
   StateSlice<PlayerState, 'player'>,
@@ -36,6 +41,11 @@ export const selectIsSubmitMenuVisible: Selector<
   boolean
 > = (state) => state.player.isSubmitMenuVisible;
 
+export const selectPlayerControlsListenerType: Selector<
+  StateSlice<PlayerState, 'player'>,
+  KeyboardEventListenerType
+> = (state) => state.player.playerControlsListenerType;
+
 /**
  * Slice definition.
  */
@@ -43,46 +53,65 @@ const playerStateSlice = createSlice({
   name: 'player',
   initialState: initialPlayerState,
   reducers: {
-    addSkipTime: (state, action: PayloadAction<SkipTime>) => {
+    previewSkipTimeAdded: (state, action: PayloadAction<PreviewSkipTime>) => {
+      state.previewSkipTime = action.payload;
+    },
+    previewSkipTimeRemoved: (state) => {
+      state.previewSkipTime = undefined;
+    },
+    previewSkipTimeIntervalUpdated: (
+      state,
+      action: PayloadAction<PreviewSkipTimeUpdatedPayload>
+    ) => {
+      if (!state.previewSkipTime) {
+        return;
+      }
+
+      state.previewSkipTime.interval[action.payload.intervalType] =
+        action.payload.time;
+    },
+    skipTimeAdded: (state, action: PayloadAction<SkipTime>) => {
       state.skipTimes.push(action.payload);
     },
-    changeVoteMenuVisibility: (state, action: PayloadAction<boolean>) => {
+    voteMenuVisibilityUpdated: (state, action: PayloadAction<boolean>) => {
       state.isVoteMenuVisible = action.payload;
     },
-    changeSubmitMenuVisibility: (state, action: PayloadAction<boolean>) => {
+    submitMenuVisibilityUpdated: (state, action: PayloadAction<boolean>) => {
       state.isSubmitMenuVisible = action.payload;
     },
-    readyPlayer: (state) => {
-      state.isReady = true;
-    },
-    removeSkipTime: (state, action: PayloadAction<string>) => {
+    skipTimeRemoved: (state, action: PayloadAction<string>) => {
       for (let i = 0; i < state.skipTimes.length; i += 1) {
         const skipTime = state.skipTimes[i];
 
-        if (skipTime.skip_id === action.payload) {
+        if (skipTime.skipId === action.payload) {
           state.skipTimes.splice(i, 1);
           return;
         }
       }
     },
-    removePreviewSkipTimes: (state) => {
-      state.skipTimes.forEach((skipTime, index) => {
-        if (skipTime.skip_type === 'preview') {
-          state.skipTimes.splice(index, 1);
-        }
-      });
+    skipTimesRemoved: (state) => {
+      state.skipTimes = [];
     },
-    reset: () => initialPlayerState,
+    playerControlsListenerTypeUpdated: (
+      state,
+      action: PayloadAction<KeyboardEventListenerType>
+    ) => {
+      state.playerControlsListenerType = action.payload;
+    },
+    playerStateReset: () => initialPlayerState,
   },
 });
 
 export const {
-  addSkipTime,
-  changeSubmitMenuVisibility,
-  changeVoteMenuVisibility,
-  readyPlayer,
-  removePreviewSkipTimes,
-  removeSkipTime,
-  reset,
+  previewSkipTimeAdded,
+  previewSkipTimeRemoved,
+  previewSkipTimeIntervalUpdated,
+  skipTimeAdded,
+  submitMenuVisibilityUpdated,
+  voteMenuVisibilityUpdated,
+  skipTimeRemoved,
+  skipTimesRemoved,
+  playerControlsListenerTypeUpdated,
+  playerStateReset,
 } = playerStateSlice.actions;
 export default playerStateSlice.reducer;

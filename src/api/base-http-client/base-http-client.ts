@@ -1,5 +1,6 @@
+import axios from 'axios';
 import { browser } from 'webextension-polyfill-ts';
-import { Response, HttpClient } from './base-http-client.types';
+import { Response, HttpClient, Config } from './base-http-client.types';
 import { Message } from '../../scripts/background';
 
 export abstract class BaseHttpClient implements HttpClient {
@@ -9,39 +10,39 @@ export abstract class BaseHttpClient implements HttpClient {
     this.baseUrl = baseUrl;
   }
 
-  async request(
-    route: string,
-    method: string,
-    params: Record<string, string | string[]> = {},
-    body: string = ''
-  ): Promise<Response> {
-    const url = new URL(`${this.baseUrl}${route}`);
-    Object.entries(params).forEach(([key, param]) => {
-      if (Array.isArray(param)) {
-        param.forEach((value) => {
-          url.searchParams.append(key, value);
-        });
-        return;
-      }
+  async request<T = any, D = any>(
+    { route, ...rest }: Config<T>,
+    isCallingBackgroundScript: boolean = true
+  ): Promise<Response<D>> {
+    const url = `${this.baseUrl}${route}`;
 
-      url.searchParams.append(key, param);
-    });
-    const options: RequestInit = {
-      method,
-    };
+    if (isCallingBackgroundScript) {
+      const response = await browser.runtime.sendMessage({
+        type: 'fetch',
+        payload: { url, ...rest },
+      } as Message);
 
-    if (method === 'POST' && body) {
-      options.headers = {
-        'Content-Type': 'application/json',
-      };
-      options.body = body;
+      return response;
     }
 
-    const response = await browser.runtime.sendMessage({
-      type: 'fetch',
-      payload: { url: url.toString(), options },
-    } as Message);
+    let response;
 
-    return { ...response, json: <T>(): T => JSON.parse(response.body) as T };
+    try {
+      const succesfulResponse = await axios({ url, ...rest });
+
+      response = {
+        data: succesfulResponse.data,
+        status: succesfulResponse.status,
+        ok: true,
+      };
+    } catch (err: any) {
+      response = {
+        data: err.response.data,
+        status: err.response.status,
+        ok: false,
+      };
+    }
+
+    return response;
   }
 }

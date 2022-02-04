@@ -1,46 +1,34 @@
 import React from 'react';
-import { useCheckIsFullscreen, useCheckIsMobile } from '../../hooks';
+import { isMobile } from 'react-device-detect';
 import { SkipButtonProps } from './SkipButton.types';
-import { getDomainName } from '../../utils';
+import { getDomainName, useCheckIsFullscreen } from '../../utils';
 import { DefaultButton } from '../DefaultButton';
+import { SKIP_TYPE_NAMES } from '../../api';
 
-export const SkipButton = ({
+export function SkipButton({
   skipType,
   variant,
   hidden,
-  onClick,
-}: SkipButtonProps): JSX.Element => {
+  ...props
+}: SkipButtonProps): JSX.Element {
   const { isFullscreen } = useCheckIsFullscreen();
-  const { isMobile } = useCheckIsMobile();
-
-  const skipTypeFullNames = {
-    op: 'Opening',
-    ed: 'Ending',
-    preview: 'Preview',
-  };
 
   const domainName = getDomainName(window.location.hostname);
 
   return (
     <div
-      className={`absolute right-11 bottom-16 z-10 pointer-events-none skip-button--${variant} skip-button--${domainName} ${
-        isFullscreen
-          ? `skip-button--${variant}--fullscreen skip-button--${domainName}--fullscreen`
-          : ''
-      } ${
-        isMobile
-          ? `skip-button--mobile skip-button--${variant}--mobile skip-button--${domainName}--mobile`
-          : ''
-      }`}
+      className={`absolute right-5 bottom-16 z-10 pointer-events-none md:right-11 skip-button skip-button--${variant} skip-button--${domainName} ${
+        isFullscreen ? 'fullscreen' : ''
+      } ${isMobile ? 'mobile' : ''}`}
     >
       <DefaultButton
-        className={`transition-opacity font-sans whitespace-nowrap text-white bg-trueGray-800 bg-opacity-80 py-3 border border-gray-300 font-bold uppercase ${
+        className={`transition-opacity font-sans whitespace-nowrap text-white bg-neutral-800 bg-opacity-80 py-3 border border-gray-300 font-bold uppercase hover:bg-opacity-100 backdrop-blur-md ${
           hidden ? 'opacity-0 pointer-events-none' : 'pointer-events-auto '
         }`}
-        onClick={onClick}
+        {...props}
       >
-        {`Skip ${skipTypeFullNames[skipType]}`}
+        {`Skip ${SKIP_TYPE_NAMES[skipType]}`}
       </DefaultButton>
     </div>
   );
-};
+}

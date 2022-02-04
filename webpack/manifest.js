@@ -11,16 +11,18 @@ const manifest = {
     page: 'options.html',
   },
   browser_action: {
-    default_popup: 'options.html',
+    default_popup: 'popup.html',
   },
   background: {
-    scripts: ['background_script.js'],
+    scripts: ['background-script.js'],
   },
+  web_accessible_resources: ['window-proxy-script.js'],
   permissions: [
     'storage',
     '*://api.aniskip.com/*',
     '*://api.malsync.moe/*',
     '*://graphql.anilist.co/*',
+    '*://beta-api.crunchyroll.com/*',
   ],
   icons: {
     16: 'icon_16.png',
@@ -41,7 +43,7 @@ const getPageUrls = () => {
       (pageName) =>
         JSON.parse(
           fs.readFileSync(path.join(pagesPath, pageName, 'metadata.json'))
-        ).page_urls
+        ).pageUrls
     )
     .flat();
 
@@ -60,7 +62,7 @@ const getPlayerUrls = () => {
       (playerName) =>
         JSON.parse(
           fs.readFileSync(path.join(playersPath, playerName, 'metadata.json'))
-        ).player_urls
+        ).playerUrls
     )
     .flat();
 
@@ -73,12 +75,12 @@ module.exports = () => {
   manifest.content_scripts = [
     {
       matches: pageUrls,
-      js: ['content_script.js'],
+      js: ['content-script.js'],
       run_at: 'document_start',
     },
     {
       matches: playerUrls,
-      js: ['player_script.js'],
+      js: ['player-script.js'],
       all_frames: true,
       run_at: 'document_start',
     },
@@ -104,7 +106,7 @@ module.exports = () => {
       };
       break;
     default:
-      break;
+    // no default
   }
 
   if (process.env.NODE_ENV === 'development') {

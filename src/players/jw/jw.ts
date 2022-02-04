@@ -1,26 +1,36 @@
 import { BasePlayer } from '../base-player';
+import { Metadata } from '../base-player.types';
 import metadata from './metadata.json';
 
 export class Jw extends BasePlayer {
-  constructor(document: Document) {
-    super(document, metadata);
+  constructor() {
+    super(metadata);
+  }
+
+  static getMetadata(): Metadata {
+    return metadata;
   }
 
   getVideoContainer(): HTMLElement | null {
-    return this.document.querySelector<HTMLElement>(
-      `[aria-label="${metadata.videoContainerSelectorString}"]`
+    return document.querySelector<HTMLElement>(
+      `[aria-label="${
+        this.metadata.selectorStrings.default!.videoContainerSelectorString
+      }"]`
     );
   }
 
   getVideoControlsContainer(): HTMLElement | null {
     return super.getContainerHelper(
-      metadata.videoControlsContainerSelectorString
+      this.metadata.selectorStrings.default!
+        .videoControlsContainerSelectorString
     );
   }
 
   getSeekBarContainer(): HTMLElement | null {
-    const slider = this.document.querySelector<HTMLElement>(
-      `[aria-label^="${metadata.seekBarContainerSelectorString}"]`
+    const slider = document.querySelector<HTMLElement>(
+      `[aria-label^="${
+        this.metadata.selectorStrings.default!.seekBarContainerSelectorString
+      }"]`
     );
     const firstChild = slider?.firstChild;
     if (firstChild) {
@@ -30,8 +40,11 @@ export class Jw extends BasePlayer {
   }
 
   getSettingsButtonElement(): HTMLElement | null {
-    return this.document.querySelector<HTMLElement>(
-      `[aria-label="${metadata.injectMenusButtonsReferenceNodeSelectorString}"]`
+    return document.querySelector<HTMLElement>(
+      `[aria-label="${
+        this.metadata.selectorStrings.default!
+          .injectMenusButtonsReferenceNodeSelectorString
+      }"][tabindex="0"]`
     );
   }
 }

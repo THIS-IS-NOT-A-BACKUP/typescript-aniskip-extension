@@ -1,9 +1,15 @@
+import { getDomainName } from '../../utils';
 import { BasePlayer } from '../base-player';
+import { Metadata } from '../base-player.types';
 import metadata from './metadata.json';
 
 export class Videojs extends BasePlayer {
-  constructor(document: Document) {
-    super(document, metadata);
+  constructor() {
+    super(metadata);
+  }
+
+  static getMetadata(): Metadata {
+    return metadata;
   }
 
   getVideoContainer(): HTMLVideoElement | null {
@@ -13,14 +19,23 @@ export class Videojs extends BasePlayer {
   }
 
   getVideoControlsContainer(): HTMLElement | null {
+    const domainName = getDomainName(window.location.hostname);
+    const { selectorStrings } = this.metadata;
+
     return super.getContainerHelper(
-      metadata.videoControlsContainerSelectorString
+      selectorStrings[domainName]?.videoControlsContainerSelectorString ??
+        selectorStrings.default!.videoControlsContainerSelectorString
     );
   }
 
   getSettingsButtonElement(): HTMLElement | null {
+    const domainName = getDomainName(window.location.hostname);
+    const { selectorStrings } = this.metadata;
+
     return super.getContainerHelper(
-      metadata.injectMenusButtonsReferenceNodeSelectorString
+      selectorStrings[domainName]
+        ?.injectMenusButtonsReferenceNodeSelectorString ??
+        selectorStrings.default!.injectMenusButtonsReferenceNodeSelectorString
     );
   }
 }

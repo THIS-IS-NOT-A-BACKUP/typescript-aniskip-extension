@@ -1,8 +1,9 @@
-export type Response = {
-  body: string;
-  json: <T>() => T;
-  ok: boolean;
+import { AxiosRequestConfig } from 'axios';
+
+export type Response<D = any> = {
+  data: D;
   status: number;
+  ok: boolean;
 };
 
 export type HttpClient = {
@@ -11,15 +12,13 @@ export type HttpClient = {
   /**
    * Performs a request to an API.
    *
-   * @param route API route to request.
-   * @param method Method to request with.
-   * @param params Url search parameters to add.
-   * @param body The body of the request.
+   * @param config Axios config.
+   * @param isCallingBackgroundScript Proxy the HTTP request using the background script.
    */
-  request(
-    route: string,
-    method: string,
-    params: Record<string, string>,
-    body: string
-  ): Promise<Response>;
+  request<T = any, D = any>(
+    config: Config<T>,
+    isCallingBackgroundScript?: boolean
+  ): Promise<Response<D>>;
 };
+
+export type Config<T = any> = AxiosRequestConfig<T> & { route: string };

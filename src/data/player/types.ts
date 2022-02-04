@@ -1,8 +1,16 @@
-import { SkipTime } from '../../api';
+import { PreviewSkipTime, SkipTime } from '../../api';
 
 export type PlayerState = {
-  isReady: boolean;
+  previewSkipTime?: PreviewSkipTime;
   skipTimes: SkipTime[];
   isSubmitMenuVisible: boolean;
   isVoteMenuVisible: boolean;
+  playerControlsListenerType: KeyboardEventListenerType;
 };
+
+export type PreviewSkipTimeUpdatedPayload = {
+  intervalType: keyof SkipTime['interval'];
+  time: number;
+};
+
+export type KeyboardEventListenerType = 'keydown' | 'keyup' | 'keypress';
