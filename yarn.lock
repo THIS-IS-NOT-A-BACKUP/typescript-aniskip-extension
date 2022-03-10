@@ -3412,14 +3412,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.39":
-  version: 17.0.39
-  resolution: "@types/react@npm:17.0.39"
+"@types/react@npm:^17.0.40":
+  version: 17.0.40
+  resolution: "@types/react@npm:17.0.40"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: bf04d3c2894559012710d595553e12b422d3b91cd8f4f7e122d8cb044ba9c2ba17f6e8a4e09581359cc5509ddc59cd8c8fabd6774f3505a40a45393f074d6e6e
+  checksum: 24d1b210b5bf3c7d49f9a7fe5490db02e005a1d989045a2d67528347557dd0bcb0d7bcf96088152697e97521ac4c9506d1357ee48a2b7d4e701c70d838dc7284
   languageName: node
   linkType: hard
 
@@ -4886,12 +4886,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.26.0":
-  version: 0.26.0
-  resolution: "axios@npm:0.26.0"
+"axios@npm:^0.26.1":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
   dependencies:
     follow-redirects: ^1.14.8
-  checksum: d7a8b898f4157bedeb2e06c03b16133b91b354c041205bea732ce58b7a21f373d22057b0eea0d482838145ce6ff482b359750d9bcb8dd19d45e3928e3c65c280
+  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -7310,15 +7310,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-airbnb-typescript@npm:^16.1.0":
-  version: 16.1.0
-  resolution: "eslint-config-airbnb-typescript@npm:16.1.0"
+"eslint-config-airbnb-typescript@npm:^16.1.1":
+  version: 16.1.1
+  resolution: "eslint-config-airbnb-typescript@npm:16.1.1"
   dependencies:
     eslint-config-airbnb-base: ^15.0.0
   peerDependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
-  checksum: 65bb6763ab825c228d01c884ddb306001f3b5cbb5c138646f6629ac780acc68d388091844b3983aa9f8f138e4e972a2a1d5a23ce95bd7a217b4a917e4e2366dd
+  checksum: c3e7c6814332fec266cb4c8e049fb77f6156716a0590c6b7cd50f12efd54e5b6482460d409e830bfc9f695565dde2446477729e6e6e9fcabec0e6f3b0250a9ae
   languageName: node
   linkType: hard
 
@@ -15786,7 +15786,7 @@ resolve@^2.0.0-next.3:
     "@reduxjs/toolkit": ^1.8.0
     "@types/chrome": ^0.0.179
     "@types/glob-to-regexp": ^0.4.1
-    "@types/react": ^17.0.39
+    "@types/react": ^17.0.40
     "@types/react-color": ^3.0.6
     "@types/react-dom": ^17.0.13
     "@types/remote-redux-devtools": ^0.5.5
@@ -15798,7 +15798,7 @@ resolve@^2.0.0-next.3:
     "@typescript-eslint/eslint-plugin": ^5.14.0
     "@typescript-eslint/parser": ^5.14.0
     autoprefixer: ^10.4.2
-    axios: ^0.26.0
+    axios: ^0.26.1
     babel-loader: ^8.2.3
     babel-plugin-lodash: ^3.3.4
     chrome-webstore-upload-cli: ^2.0.1
@@ -15811,7 +15811,7 @@ resolve@^2.0.0-next.3:
     entities: ^3.0.1
     eslint: ^8.10.0
     eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^16.1.0
+    eslint-config-airbnb-typescript: ^16.1.1
     eslint-config-prettier: ^8.5.0
     eslint-import-resolver-node: ^0.3.6
     eslint-plugin-import: ^2.25.4
