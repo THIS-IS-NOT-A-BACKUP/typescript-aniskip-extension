@@ -2853,23 +2853,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "@reduxjs/toolkit@npm:1.8.0"
+"@reduxjs/toolkit@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@reduxjs/toolkit@npm:1.8.1"
   dependencies:
     immer: ^9.0.7
     redux: ^4.1.2
     redux-thunk: ^2.4.1
     reselect: ^4.1.5
   peerDependencies:
-    react: ^16.9.0 || ^17.0.0 || 18.0.0-beta
+    react: ^16.9.0 || ^17.0.0 || ^18
     react-redux: ^7.2.1 || ^8.0.0-beta
   peerDependenciesMeta:
     react:
       optional: true
     react-redux:
       optional: true
-  checksum: e229571b80d7f5c4407af2050ac2a26a22472541fef1705d5e8b73b93bfb2884072d79e1cea2cd81d89939cc6b6073ef3ddf1680950aac66ba34cd202a6cf371
+  checksum: be5cdea975a8a631fe2d88cafc7077554c7bc3621a4a7031556cc17e5dec26359018f2614c325895e7ab50865f5c511025d1e589ca01de7e2bd88d95e0a1a963
   languageName: node
   linkType: hard
 
@@ -13388,6 +13388,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-redux@npm:^7.2.7":
+  version: 7.2.7
+  resolution: "react-redux@npm:7.2.7"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    "@types/react-redux": ^7.1.20
+    hoist-non-react-statics: ^3.3.2
+    loose-envify: ^1.4.0
+    prop-types: ^15.7.2
+    react-is: ^17.0.2
+  peerDependencies:
+    react: ^16.8.3 || ^17 || ^18
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: c68e8b072a5111a9a30a52db74826aceed19e2e91bf86c789675dfb5d886536b932392a7e6a49ffe3fb23d0d1bae6fc3663b80a2ee7e3d4eb1c3fdc5e7e169f7
+  languageName: node
+  linkType: hard
+
 "react-select@npm:^5.2.2":
   version: 5.2.2
   resolution: "react-select@npm:5.2.2"
@@ -14150,16 +14171,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.49.9":
-  version: 1.49.9
-  resolution: "sass@npm:1.49.9"
+"sass@npm:^1.49.10":
+  version: 1.49.10
+  resolution: "sass@npm:1.49.10"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: e5653e3499274c5127dcb5c9e7c5f6930378fc61764d999a5d8965782e027181ed09714f94836dec74ef55e3a858107fe6c571954c0cab0ad0be5ab8e586829c
+  checksum: 7b767ece77df47382ac80ff279f5c1cff24dec6684ccaf3f9657f52a793e7ba7b85e4d30a45fb6c70f9fc46da507559fe83e771dcb804341d03af908ad6404c9
   languageName: node
   linkType: hard
 
@@ -15834,7 +15855,7 @@ resolve@^2.0.0-next.3:
     "@headlessui/react": ^1.5.0
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^1.0.6
-    "@reduxjs/toolkit": ^1.8.0
+    "@reduxjs/toolkit": ^1.8.1
     "@types/chrome": ^0.0.180
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^17.0.43
@@ -15885,11 +15906,11 @@ resolve@^2.0.0-next.3:
     react-device-detect: ^2.1.2
     react-dom: ^17.0.2
     react-icons: ^4.3.1
-    react-redux: ^7.2.6
+    react-redux: ^7.2.7
     redux: ^4.1.2
     remote-redux-devtools: ^0.5.16
     rimraf: ^3.0.2
-    sass: ^1.49.9
+    sass: ^1.49.10
     sass-loader: ^12.6.0
     schema-utils: ^4.0.0
     sprintf-js: ^1.1.2
