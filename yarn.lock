@@ -5969,9 +5969,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "concurrently@npm:7.0.0"
+"concurrently@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "concurrently@npm:7.1.0"
   dependencies:
     chalk: ^4.1.0
     date-fns: ^2.16.1
@@ -5983,7 +5983,7 @@ __metadata:
     yargs: ^16.2.0
   bin:
     concurrently: dist/bin/concurrently.js
-  checksum: 1be78f24bf814f097adaf2e61a37563eb73f12272bbeda90e3e616a23525f793268e22a3c6aedf34e5bad44459f7c30ee053c617905416ba11ce2bee55f089a5
+  checksum: 723996afc73af7ea914a03726c75b63be6ce83f0825b0bc54de0568ba89490e217ca88523f251fe1e5c30ee2780572dce830b530ef35e435e64c1f94cfd4e4af
   languageName: node
   linkType: hard
 
@@ -12998,12 +12998,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "prettier@npm:2.6.1"
+"prettier@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 78be1f8a3ddfad7c3d8a854b6c8941a3bb1ddfca4225c38d778e0fe1029a55368f71b3bbefff82c689015fbb4d391ec44add957f01308ad2725e01a7c1f37cb6
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
   languageName: node
   linkType: hard
 
@@ -14171,16 +14171,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.49.10":
-  version: 1.49.10
-  resolution: "sass@npm:1.49.10"
+"sass@npm:^1.49.11":
+  version: 1.49.11
+  resolution: "sass@npm:1.49.11"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 7b767ece77df47382ac80ff279f5c1cff24dec6684ccaf3f9657f52a793e7ba7b85e4d30a45fb6c70f9fc46da507559fe83e771dcb804341d03af908ad6404c9
+  checksum: f81cabfc43d6baf710979d647e24019f7cfb68242f8421d20dfc8c864cf83512b0b74a89098331696f758756829cb736f7b8aca70a11cff365928393ae351bcc
   languageName: node
   linkType: hard
 
@@ -15875,7 +15875,7 @@ resolve@^2.0.0-next.3:
     babel-plugin-lodash: ^3.3.4
     chrome-webstore-upload-cli: ^2.0.1
     clean-webpack-plugin: ^4.0.0
-    concurrently: ^7.0.0
+    concurrently: ^7.1.0
     copy-webpack-plugin: ^10.2.4
     cross-env: ^7.0.3
     css-loader: ^6.7.1
@@ -15900,7 +15900,7 @@ resolve@^2.0.0-next.3:
     postcss: ^8.4.12
     postcss-import: ^14.1.0
     postcss-loader: ^6.2.1
-    prettier: ^2.6.1
+    prettier: ^2.6.2
     react: ^17.0.2
     react-color: ^2.19.3
     react-device-detect: ^2.1.2
@@ -15910,7 +15910,7 @@ resolve@^2.0.0-next.3:
     redux: ^4.1.2
     remote-redux-devtools: ^0.5.16
     rimraf: ^3.0.2
-    sass: ^1.49.10
+    sass: ^1.49.11
     sass-loader: ^12.6.0
     schema-utils: ^4.0.0
     sprintf-js: ^1.1.2
