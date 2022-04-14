@@ -5652,9 +5652,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chrome-webstore-upload-cli@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "chrome-webstore-upload-cli@npm:2.0.1"
+"chrome-webstore-upload-cli@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "chrome-webstore-upload-cli@npm:2.1.0"
   dependencies:
     chrome-webstore-upload: ^0.5.0
     junk: ^4.0.0
@@ -5664,7 +5664,7 @@ __metadata:
     yazl: ^2.5.1
   bin:
     chrome-webstore-upload: cli.js
-  checksum: a9a1921e394e27cc95ca9c9d8452d643120a33782db390a4bdf58da7005a6e6c82384f78f350c4b69c46b1b16e323e8145fd135b47cc7d2a3fa1a30d34275b2b
+  checksum: 1160fe0d696f2ea111800362e94c9228b06ae661ffd97b446b8628369b8c6d6b756951a8ac3c6b52b4e6626c7c4b9cfe1d1ba340ab051a4b4ba2120a21ac23ae
   languageName: node
   linkType: hard
 
@@ -8301,9 +8301,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^7.2.4":
-  version: 7.2.4
-  resolution: "fork-ts-checker-webpack-plugin@npm:7.2.4"
+"fork-ts-checker-webpack-plugin@npm:^7.2.6":
+  version: 7.2.6
+  resolution: "fork-ts-checker-webpack-plugin@npm:7.2.6"
   dependencies:
     "@babel/code-frame": ^7.16.7
     chalk: ^4.1.2
@@ -8323,7 +8323,7 @@ __metadata:
   peerDependenciesMeta:
     vue-template-compiler:
       optional: true
-  checksum: a45997570ae893ef616951bb5d26b770abe1f75a2c76b99ec0af8e949d72e4d9de6e8bfcc2393c6e4468a9c518412245ced6a9408647551d8258d44925bde6c1
+  checksum: d74e8b22e3e4d5159061d93f519d7eb795bafac4b9a993b72eed952a714144d89c8a706414b231a89c69cabf29e00e1fb26d7060e3b5577c08cabb5a3d5a7697
   languageName: node
   linkType: hard
 
@@ -15960,7 +15960,7 @@ resolve@^2.0.0-next.3:
     axios: ^0.26.1
     babel-loader: ^8.2.4
     babel-plugin-lodash: ^3.3.4
-    chrome-webstore-upload-cli: ^2.0.1
+    chrome-webstore-upload-cli: ^2.1.0
     clean-webpack-plugin: ^4.0.0
     concurrently: ^7.1.0
     copy-webpack-plugin: ^10.2.4
@@ -15978,7 +15978,7 @@ resolve@^2.0.0-next.3:
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.29.4
     eslint-plugin-react-hooks: ^4.4.0
-    fork-ts-checker-webpack-plugin: ^7.2.4
+    fork-ts-checker-webpack-plugin: ^7.2.6
     glob-to-regexp: ^0.4.1
     html-webpack-plugin: ^5.5.0
     lodash: ^4.17.21
