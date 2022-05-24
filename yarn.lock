@@ -3455,12 +3455,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.4":
-  version: 18.0.4
-  resolution: "@types/react-dom@npm:18.0.4"
+"@types/react-dom@npm:^18.0.5":
+  version: 18.0.5
+  resolution: "@types/react-dom@npm:18.0.5"
   dependencies:
     "@types/react": "*"
-  checksum: decde42d02a90ac2fe94fd6bfd9c78d002c03762a2d940df9422bf61af89c03d05e2113fd55fe45521fe27fa872a79dfd654b7d6b89652b455425efdcb763c58
+  checksum: cd48b81950f499b52a3f0c08261f00046f9b7c96699fa249c9664e257e820daf6ecac815cd1028cebc9d105094adc39d047d1efd79214394b8b2d515574c0787
   languageName: node
   linkType: hard
 
@@ -16205,10 +16205,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.12.2":
-  version: 2.12.2
-  resolution: "type-fest@npm:2.12.2"
-  checksum: ee69676da1f69d2b14bbec28c7b95220a3221ab14093f54bde179c59e185a80470859553eada535ec35d8637a245c2f0efe9d7c99cc46a43f3b4c7ef64db7957
+"type-fest@npm:^2.13.0":
+  version: 2.13.0
+  resolution: "type-fest@npm:2.13.0"
+  checksum: 3492384f759fdeaec7eaa07e79f70e777bf825cf8892690642fa9350818df4a8c50fd697fd1239ae7026064af4dd94e4d5eca27e781e0952ff302af0708a2e69
   languageName: node
   linkType: hard
 
@@ -16256,7 +16256,7 @@ resolve@^2.0.0-next.3:
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^18.0.9
     "@types/react-color": ^3.0.6
-    "@types/react-dom": ^18.0.4
+    "@types/react-dom": ^18.0.5
     "@types/remote-redux-devtools": ^0.5.5
     "@types/sprintf-js": ^1.1.2
     "@types/string-similarity": ^4.0.0
@@ -16315,7 +16315,7 @@ resolve@^2.0.0-next.3:
     style-loader: ^3.3.1
     tailwindcss: ^3.0.24
     to-string-loader: ^1.2.0
-    type-fest: ^2.12.2
+    type-fest: ^2.13.0
     typescript: ^4.6.4
     uuid: ^8.3.2
     wait-on: ^6.0.1
