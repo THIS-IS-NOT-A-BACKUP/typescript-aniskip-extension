@@ -3654,14 +3654,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.12":
-  version: 18.0.12
-  resolution: "@types/react@npm:18.0.12"
+"@types/react@npm:^18.0.13":
+  version: 18.0.13
+  resolution: "@types/react@npm:18.0.13"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 526ea13b3adf7fe4b475e55b7426510a7861ef2910664a9014ef42cba0c699d5167dc378eb161e2ec26c07a3b6fde9b6bdcbbb6f4b5580612246bc289395ef03
+  checksum: ef976dbcd5605f3b8db2b286b1b35471d574dca711a2b6928c164075efd3ee731b3f32708f1ae09cfb04b003f9a4a9774cc386c32688f7fae864ea53a1c238f6
   languageName: node
   linkType: hard
 
@@ -11672,14 +11672,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "mini-css-extract-plugin@npm:2.6.0"
+"mini-css-extract-plugin@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "mini-css-extract-plugin@npm:2.6.1"
   dependencies:
     schema-utils: ^4.0.0
   peerDependencies:
     webpack: ^5.0.0
-  checksum: ea73bd66558de7a37db094fe68fa130e7a725ab15f880ff8467a75d9c4c2f1576d20720088ea22af9922a94b8600bbfef0c6acaf10d12a32a9bd20a90ba3c35f
+  checksum: df60840404878c4832b4104799fd29c5a89b06b1e377956c8d4a5729efe0ef301a52e5087d6f383871df5e69a8445922a0ae635c11abf412d7645a7096d0e973
   languageName: node
   linkType: hard
 
@@ -13614,12 +13614,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "prettier@npm:2.7.0"
+"prettier@npm:^2.7.1":
+  version: 2.7.1
+  resolution: "prettier@npm:2.7.1"
   bin:
     prettier: bin-prettier.js
-  checksum: 5b55bb1dced9d16635b83229df8e670d150890fdb343f19e8a66e610094a108e960c0f57352b3e5cdbc4eff4ef00a834406047ffcd9f20bd22a6497ba143c81f
+  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
   languageName: node
   linkType: hard
 
@@ -16680,7 +16680,7 @@ resolve@^2.0.0-next.3:
     "@reduxjs/toolkit": ^1.8.2
     "@types/chrome": ^0.0.190
     "@types/glob-to-regexp": ^0.4.1
-    "@types/react": ^18.0.12
+    "@types/react": ^18.0.13
     "@types/react-color": ^3.0.6
     "@types/react-dom": ^18.0.5
     "@types/remote-redux-devtools": ^0.5.5
@@ -16718,11 +16718,11 @@ resolve@^2.0.0-next.3:
     ky: ^0.30.0
     lodash: ^4.17.21
     lodash-webpack-plugin: ^0.11.6
-    mini-css-extract-plugin: ^2.6.0
+    mini-css-extract-plugin: ^2.6.1
     postcss: ^8.4.14
     postcss-import: ^14.1.0
     postcss-loader: ^7.0.0
-    prettier: ^2.7.0
+    prettier: ^2.7.1
     qs: ^6.10.5
     react: ^18.2.0
     react-color: ^2.19.3
