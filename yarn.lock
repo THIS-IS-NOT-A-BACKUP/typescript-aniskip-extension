@@ -2954,13 +2954,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.191":
-  version: 0.0.191
-  resolution: "@types/chrome@npm:0.0.191"
+"@types/chrome@npm:^0.0.192":
+  version: 0.0.192
+  resolution: "@types/chrome@npm:0.0.192"
   dependencies:
     "@types/filesystem": "*"
     "@types/har-format": "*"
-  checksum: 2c0abc3b3b9d54db3c07a3faf121b208b98b5605942f90d7977814a02fb2a438645b209fd75461aead2276e42e4e089da3f3ec228bc266ff41d466aa031702b6
+  checksum: c2c15099426432e9730e1fc68b8b10ba894f0585f433ddad4f97d10a2ef83678bbfad8cff9055731928f9bde9a8e557db665bc762415483b46f4c1b76114832b
   languageName: node
   linkType: hard
 
@@ -16401,10 +16401,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.15.1":
-  version: 2.15.1
-  resolution: "type-fest@npm:2.15.1"
-  checksum: 4eb7d717aae49ca654a6926f99bef8112f76f71c7a685df8e0431e6ae8049bae6c526076f30ee5ccddc535d4b3b3869bcc5e8c4b7f0264b1007f810b898dd33c
+"type-fest@npm:^2.16.0":
+  version: 2.16.0
+  resolution: "type-fest@npm:2.16.0"
+  checksum: 897fc5f6833de5ade5c4841d034bdfb6aaa168f24f725354ad13320b2a463b9df03a7a664b836b4c3bc7d9f92b22a25c26fe24668a35caf3b7a9ea5fcb847b8d
   languageName: node
   linkType: hard
 
@@ -16448,7 +16448,7 @@ resolve@^2.0.0-next.3:
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^1.0.7
     "@reduxjs/toolkit": ^1.8.3
-    "@types/chrome": ^0.0.191
+    "@types/chrome": ^0.0.192
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^18.0.14
     "@types/react-color": ^3.0.6
@@ -16511,7 +16511,7 @@ resolve@^2.0.0-next.3:
     style-loader: ^3.3.1
     tailwindcss: ^3.1.4
     to-string-loader: ^1.2.0
-    type-fest: ^2.15.1
+    type-fest: ^2.16.0
     typescript: ^4.7.4
     uuid: ^8.3.2
     wait-on: ^6.0.1
