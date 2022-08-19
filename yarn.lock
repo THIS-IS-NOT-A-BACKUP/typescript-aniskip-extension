@@ -3094,13 +3094,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.193":
-  version: 0.0.193
-  resolution: "@types/chrome@npm:0.0.193"
+"@types/chrome@npm:^0.0.194":
+  version: 0.0.194
+  resolution: "@types/chrome@npm:0.0.194"
   dependencies:
     "@types/filesystem": "*"
     "@types/har-format": "*"
-  checksum: f01205376becff1a229443473c697b0ab42d87af00dc2a52f7a16bce2ad223875fd95ebee12ab1598f2669eb1af26953863c37aace7e87551f68ff73eaaedba5
+  checksum: 80e5d443e8a84c5b5209d071218397a1131159ed9306b586475c33bd6b2acf4097bd3dbcd709fa0e0c70b0e30b0ebb8d3bb7de7e16936c9ba18e09e6896e5ef0
   languageName: node
   linkType: hard
 
@@ -17041,10 +17041,10 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^2.18.0":
-  version: 2.18.0
-  resolution: "type-fest@npm:2.18.0"
-  checksum: 0737128d9d77b93793c6ee443e304462a792f5b723a6be035d6cb488c5610a8baa00522805421341c04324c80efba9849885bbfbc5a9623d0672fe8712969f62
+"type-fest@npm:^2.18.1":
+  version: 2.18.1
+  resolution: "type-fest@npm:2.18.1"
+  checksum: 2aabebe88d4cfa8d9576058ee475f95efd878a85a6cbe0b4f4e1d45c891501d12b29057a0baddd5fc5652b128622308a499ac5eed68c69ebb05b1c960d2943cf
   languageName: node
   linkType: hard
 
@@ -17088,7 +17088,7 @@ resolve@^2.0.0-next.3:
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^1.0.7
     "@reduxjs/toolkit": ^1.8.4
-    "@types/chrome": ^0.0.193
+    "@types/chrome": ^0.0.194
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^18.0.17
     "@types/react-color": ^3.0.6
@@ -17151,7 +17151,7 @@ resolve@^2.0.0-next.3:
     style-loader: ^3.3.1
     tailwindcss: ^3.1.8
     to-string-loader: ^1.2.0
-    type-fest: ^2.18.0
+    type-fest: ^2.18.1
     typescript: ^4.7.4
     uuid: ^8.3.2
     wait-on: ^6.0.1
@@ -17159,7 +17159,7 @@ resolve@^2.0.0-next.3:
     web-ext-submit: ^7.2.0
     webextension-polyfill-ts: ^0.26.0
     webpack: ^5.74.0
-    webpack-bundle-analyzer: ^4.5.0
+    webpack-bundle-analyzer: ^4.6.0
     webpack-cli: ^4.10.0
     webpack-copy-plugin: ^0.0.4
     webpack-merge: ^5.8.0
@@ -17722,9 +17722,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "webpack-bundle-analyzer@npm:4.5.0"
+"webpack-bundle-analyzer@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "webpack-bundle-analyzer@npm:4.6.0"
   dependencies:
     acorn: ^8.0.4
     acorn-walk: ^8.0.0
@@ -17737,7 +17737,7 @@ resolve@^2.0.0-next.3:
     ws: ^7.3.1
   bin:
     webpack-bundle-analyzer: lib/bin/analyzer.js
-  checksum: 158e96810ec213d5665ca1c0b257097db44e1f11c4befefab8352b9e5b10890fcb3e3fc1f7bb400dd58762a8edce5621c92afeca86eb4687d2eb64e93186bfcb
+  checksum: f2921b08cb6a7e58e5b94d2324e98039666ef5c4ce46dc29d5c13f122f12b9b5e9036336283196b70f696be793aec900f87b352712f2fc28d1beec4b7080a097
   languageName: node
   linkType: hard
 
