@@ -3167,13 +3167,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.195":
-  version: 0.0.195
-  resolution: "@types/chrome@npm:0.0.195"
+"@types/chrome@npm:^0.0.196":
+  version: 0.0.196
+  resolution: "@types/chrome@npm:0.0.196"
   dependencies:
     "@types/filesystem": "*"
     "@types/har-format": "*"
-  checksum: 074c8981ae18f1f32ce07f2e153c655bf0a213db6e3b9d67058e3a5c4fd39b0af33e6c2a56384ce2e7d0027db9b63751a719a4af7111fa46c254259f780bb3a5
+  checksum: 34a4523882174d11bfc46c3c83be5fbd1958d1811f6e63ce383e6f0587496a7ddb438ab0d333b554c2a44361a541ed693cad32c3ca608cafde23f3d1d44569a0
   languageName: node
   linkType: hard
 
@@ -7722,10 +7722,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "entities@npm:4.3.1"
-  checksum: e8f6d2bac238494b2355e90551893882d2675142be7e7bdfcb15248ed0652a630678ba0e3a8dc750693e736cb6011f504c27dabeb4cd3330560092e88b105090
+"entities@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "entities@npm:4.4.0"
+  checksum: 84d250329f4b56b40fa93ed067b194db21e8815e4eb9b59f43a086f0ecd342814f6bc483de8a77da5d64e0f626033192b1b4f1792232a7ea6b970ebe0f3187c2
   languageName: node
   linkType: hard
 
@@ -15391,16 +15391,16 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.54.7":
-  version: 1.54.7
-  resolution: "sass@npm:1.54.7"
+"sass@npm:^1.54.8":
+  version: 1.54.8
+  resolution: "sass@npm:1.54.8"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 4b6a10e93387e65dcbad2683d46b4249453ab8777c1bafab7a73ac3900a21fa91fa31d68df7a1b982c7e332a99b5574b1adc6168eb1ac6d7ebb28e18a65c4198
+  checksum: 72893b2dc6284a6194fc560a578da57ab0082130ee558a96bcb9893cc7b517b836dac6e17b3a52b040975e70b4cdefb1268907df955a706b5bf70e3860afcfba
   languageName: node
   linkType: hard
 
@@ -17186,7 +17186,7 @@ resolve@^2.0.0-next.3:
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^1.0.7
     "@reduxjs/toolkit": ^1.8.5
-    "@types/chrome": ^0.0.195
+    "@types/chrome": ^0.0.196
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^18.0.18
     "@types/react-color": ^3.0.6
@@ -17209,7 +17209,7 @@ resolve@^2.0.0-next.3:
     cross-env: ^7.0.3
     css-loader: ^6.7.1
     css-minimizer-webpack-plugin: ^4.0.0
-    entities: ^4.3.1
+    entities: ^4.4.0
     eslint: ^8.23.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
@@ -17241,7 +17241,7 @@ resolve@^2.0.0-next.3:
     redux: ^4.2.0
     remote-redux-devtools: ^0.5.16
     rimraf: ^3.0.2
-    sass: ^1.54.7
+    sass: ^1.54.8
     sass-loader: ^13.0.2
     schema-utils: ^4.0.0
     sprintf-js: ^1.1.2
