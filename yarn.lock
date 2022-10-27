@@ -1933,7 +1933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:7.19.4, @babel/runtime@npm:^7.19.4":
+"@babel/runtime@npm:7.19.4":
   version: 7.19.4
   resolution: "@babel/runtime@npm:7.19.4"
   dependencies:
@@ -1984,6 +1984,15 @@ __metadata:
   dependencies:
     regenerator-runtime: ^0.13.4
   checksum: 68d195c1630bb91ac20e86635d292a17ebab7f361cfe79406b3f5a6cc2e59fa283ae5006568899abf869312c2b35b744bd407aea8ffdb650f1a68d07785d47e9
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.20.0":
+  version: 7.20.0
+  resolution: "@babel/runtime@npm:7.20.0"
+  dependencies:
+    regenerator-runtime: ^0.13.10
+  checksum: 637fca51db34f3a59d329b7e0d01163769fe94915fdb04e4ac4ba62de9f1ca637ce3a564fe3b0166ccdd7f02f14b6a5707ee3e550b3e01c72327c6620d8e6a8b
   languageName: node
   linkType: hard
 
@@ -3399,13 +3408,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.199":
-  version: 0.0.199
-  resolution: "@types/chrome@npm:0.0.199"
+"@types/chrome@npm:^0.0.200":
+  version: 0.0.200
+  resolution: "@types/chrome@npm:0.0.200"
   dependencies:
     "@types/filesystem": "*"
     "@types/har-format": "*"
-  checksum: d309e488452655f5b3d2ae9cefe98695b4eb664183db3e23a9a1da9d75baf463bcff5e4c5bd16ed164af7994a8dde6ce174c5462861fcabccbcd554e1bb59067
+  checksum: 8e34ead6be66f00b7df8a2f6543599e3f2cc9b414a06c9193fb043cdb7e88750b96f162a287aca8c67007dc0c07ce5af26dcdd8716921bb4170bdcb76d5e2a68
   languageName: node
   linkType: hard
 
@@ -3590,7 +3599,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.6":
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.6":
   version: 7.0.7
   resolution: "@types/json-schema@npm:7.0.7"
   checksum: ea3b409235862d28122751158f4054e729e31ad844bd7b8b23868f38c518047b1c0e8e4e7cc293e02c31a2fb8cfc8a4506c2de2a745cf78b218e064fb8898cd4
@@ -3758,12 +3767,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.7":
-  version: 18.0.7
-  resolution: "@types/react-dom@npm:18.0.7"
+"@types/react-dom@npm:^18.0.8":
+  version: 18.0.8
+  resolution: "@types/react-dom@npm:18.0.8"
   dependencies:
     "@types/react": "*"
-  checksum: 4fd47dd114d61e7228637de9bee685b81ea18b89b220a67662b05ebe74f69aad7cd929ebe69e8fd572cc8e0e9adf9bba1ea5586cfd37eb9045778851e78bcd66
+  checksum: 522e5e949d05f35c6037a2290838c9c7ff92a9d06f7d96b993c7c3f5a86d8f3a6337e059c94e6fb0920227f445e5d1ce10fbfe3d9bbd95fb82a5539249d90646
   languageName: node
   linkType: hard
 
@@ -3810,14 +3819,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.23":
-  version: 18.0.23
-  resolution: "@types/react@npm:18.0.23"
+"@types/react@npm:^18.0.24":
+  version: 18.0.24
+  resolution: "@types/react@npm:18.0.24"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 8b915793b9d6d53c19d76aab35d50a407cac6f4fb1e349cf037196302e8a7661d6c75870dc2fcb0b029c6f0db89d23fee910b777d28dd0e26becf8b312ddb61b
+  checksum: 7d06125bac61e1c6661e5dfbeeeb56d5b6d1d4c743292faebaa6b0f30f8414c7af3cadf674923fd86e4ca14e82566ff9156cd40c56786be024600c31b97d6c03
   languageName: node
   linkType: hard
 
@@ -5487,18 +5496,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^8.2.5":
-  version: 8.2.5
-  resolution: "babel-loader@npm:8.2.5"
+"babel-loader@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "babel-loader@npm:9.0.0"
   dependencies:
-    find-cache-dir: ^3.3.1
-    loader-utils: ^2.0.0
-    make-dir: ^3.1.0
-    schema-utils: ^2.6.5
+    find-cache-dir: ^3.3.2
+    schema-utils: ^4.0.0
   peerDependencies:
-    "@babel/core": ^7.0.0
-    webpack: ">=2"
-  checksum: a6605557885eabbc3250412405f2c63ca87287a95a439c643fdb47d5ea3d5326f72e43ab97be070316998cb685d5dfbc70927ce1abe8be7a6a4f5919287773fb
+    "@babel/core": ^7.12.0
+    webpack: ">=5"
+  checksum: 6b146e33c81fd948ffdefa8a6319efa1bea6e17c946bfac4641375710e51831aeb7f4a20c88604eaa00f5ecd4b6591da5a65ade326feba792609f932df150645
   languageName: node
   linkType: hard
 
@@ -9155,7 +9162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.3.2":
   version: 3.3.2
   resolution: "find-cache-dir@npm:3.3.2"
   dependencies:
@@ -11320,17 +11327,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2":
-  version: 2.2.0
-  resolution: "json5@npm:2.2.0"
-  dependencies:
-    minimist: ^1.2.5
-  bin:
-    json5: lib/cli.js
-  checksum: e88fc5274bb58fc99547baa777886b069d2dd96d9cfc4490b305fd16d711dabd5979e35a4f90873cefbeb552e216b041a304fe56702bedba76e19bc7845f208d
-  languageName: node
-  linkType: hard
-
 "json5@npm:^2.2.1":
   version: 2.2.1
   resolution: "json5@npm:2.2.1"
@@ -11883,17 +11879,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loader-utils@npm:^2.0.0":
-  version: 2.0.2
-  resolution: "loader-utils@npm:2.0.2"
-  dependencies:
-    big.js: ^5.2.2
-    emojis-list: ^3.0.0
-    json5: ^2.1.2
-  checksum: 9078d1ed47cadc57f4c6ddbdb2add324ee7da544cea41de3b7f1128e8108fcd41cd3443a85b7ee8d7d8ac439148aa221922774efe4cf87506d4fb054d5889303
-  languageName: node
-  linkType: hard
-
 "localforage@npm:^1.10.0":
   version: 1.10.0
   resolution: "localforage@npm:1.10.0"
@@ -12128,7 +12113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-dir@npm:^3.0.0, make-dir@npm:^3.0.2, make-dir@npm:^3.1.0":
+"make-dir@npm:^3.0.0, make-dir@npm:^3.0.2":
   version: 3.1.0
   resolution: "make-dir@npm:3.1.0"
   dependencies:
@@ -15278,6 +15263,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.13.10":
+  version: 0.13.10
+  resolution: "regenerator-runtime@npm:0.13.10"
+  checksum: 09893f5a9e82932642d9a999716b6c626dc53ef2a01307c952ebbf8e011802360163a37c304c18a6c358548be5a72b448e37209954a18696f21e438c81cbb4b9
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.13.4":
   version: 0.13.8
   resolution: "regenerator-runtime@npm:0.13.8"
@@ -15990,17 +15982,6 @@ resolve@^2.0.0-next.3:
   dependencies:
     loose-envify: ^1.1.0
   checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
-  languageName: node
-  linkType: hard
-
-"schema-utils@npm:^2.6.5":
-  version: 2.7.1
-  resolution: "schema-utils@npm:2.7.1"
-  dependencies:
-    "@types/json-schema": ^7.0.5
-    ajv: ^6.12.4
-    ajv-keywords: ^3.5.2
-  checksum: 32c62fc9e28edd101e1bd83453a4216eb9bd875cc4d3775e4452b541908fa8f61a7bbac8ffde57484f01d7096279d3ba0337078e85a918ecbeb72872fb09fb2b
   languageName: node
   linkType: hard
 
@@ -17682,16 +17663,16 @@ resolve@^2.0.0-next.3:
     "@babel/preset-env": ^7.19.4
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
-    "@babel/runtime": ^7.19.4
+    "@babel/runtime": ^7.20.0
     "@headlessui/react": ^1.7.3
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^1.0.7
     "@reduxjs/toolkit": ^1.8.6
-    "@types/chrome": ^0.0.199
+    "@types/chrome": ^0.0.200
     "@types/glob-to-regexp": ^0.4.1
-    "@types/react": ^18.0.23
+    "@types/react": ^18.0.24
     "@types/react-color": ^3.0.6
-    "@types/react-dom": ^18.0.7
+    "@types/react-dom": ^18.0.8
     "@types/remote-redux-devtools": ^0.5.5
     "@types/sprintf-js": ^1.1.2
     "@types/string-similarity": ^4.0.0
@@ -17701,7 +17682,7 @@ resolve@^2.0.0-next.3:
     "@typescript-eslint/eslint-plugin": ^5.41.0
     "@typescript-eslint/parser": ^5.41.0
     autoprefixer: ^10.4.12
-    babel-loader: ^8.2.5
+    babel-loader: ^9.0.0
     babel-plugin-lodash: ^3.3.4
     chrome-webstore-upload-cli: ^2.1.0
     clean-webpack-plugin: ^4.0.0
