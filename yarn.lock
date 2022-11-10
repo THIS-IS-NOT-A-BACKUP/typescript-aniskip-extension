@@ -15664,15 +15664,15 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^13.1.0":
-  version: 13.1.0
-  resolution: "sass-loader@npm:13.1.0"
+"sass-loader@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "sass-loader@npm:13.2.0"
   dependencies:
     klona: ^2.0.4
     neo-async: ^2.6.2
   peerDependencies:
     fibers: ">= 3.1.0"
-    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     sass: ^1.3.0
     sass-embedded: "*"
     webpack: ^5.0.0
@@ -15685,7 +15685,7 @@ resolve@^2.0.0-next.3:
       optional: true
     sass-embedded:
       optional: true
-  checksum: 6b3b6c0e070a32c594001cee98c85a72afb6081c46d56a4283269e6c1802b0e26128bc8363fcd8d8c941abe1f9e441e3efcd401fcf3ef436e1f1fbeb6e0a1374
+  checksum: ed6cdb5f5508e1a8a020d1451160a5e94805d0c2a97be5719c6a44ed28a258b5f37a1478d01b9d545f269367ae91ccb88adc93bd6202bfd609dbe3193228d51e
   languageName: node
   linkType: hard
 
@@ -16949,9 +16949,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "tailwindcss@npm:3.2.2"
+"tailwindcss@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "tailwindcss@npm:3.2.3"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -16981,7 +16981,7 @@ resolve@^2.0.0-next.3:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 4f29f9d7bed74f70cd90281c4068e20903cbe79949987aae7c6cf197df9c852caa0d9884c19547f55eac09c2468dfe30c25bc8e75482e2654e24ee40d74078f9
+  checksum: 5a31815c69d3ecfb6ed4882942d6e0dc3b79e5dbbadd758ccebe99d66d403b29d80b7b73dec0a81ee21ada4ec8e9d467dd1bc14b559726c5a19425030f29aea9
   languageName: node
   linkType: hard
 
@@ -17532,12 +17532,12 @@ resolve@^2.0.0-next.3:
     remote-redux-devtools: ^0.5.16
     rimraf: ^3.0.2
     sass: ^1.56.1
-    sass-loader: ^13.1.0
+    sass-loader: ^13.2.0
     schema-utils: ^4.0.0
     sprintf-js: ^1.1.2
     string-similarity: ^4.0.4
     style-loader: ^3.3.1
-    tailwindcss: ^3.2.2
+    tailwindcss: ^3.2.3
     to-string-loader: ^1.2.0
     type-fest: ^3.2.0
     typescript: ^4.8.4
@@ -17546,7 +17546,7 @@ resolve@^2.0.0-next.3:
     web-ext: ^7.3.1
     web-ext-submit: ^7.3.1
     webextension-polyfill-ts: ^0.26.0
-    webpack: ^5.74.0
+    webpack: ^5.75.0
     webpack-bundle-analyzer: ^4.7.0
     webpack-cli: ^4.10.0
     webpack-copy-plugin: ^0.0.4
@@ -18262,9 +18262,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.74.0":
-  version: 5.74.0
-  resolution: "webpack@npm:5.74.0"
+"webpack@npm:^5.75.0":
+  version: 5.75.0
+  resolution: "webpack@npm:5.75.0"
   dependencies:
     "@types/eslint-scope": ^3.7.3
     "@types/estree": ^0.0.51
@@ -18295,7 +18295,7 @@ resolve@^2.0.0-next.3:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 320c41369a75051b19e18c63f408b3dcc481852e992f83d311771c5ec0f05f2946385e8ebef62030cf3587f0a3d2f12779ffdb191569a966847289ba7313f946
+  checksum: 2bcc5f3c195f375944e8af2f00bf2feea39cb9fda5f763b0d1b00077f1c51783db25c94d3fae96a07dead9fa085e6ae7474417e5ab31719c9776ea5969ceb83a
   languageName: node
   linkType: hard
 
