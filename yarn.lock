@@ -3830,14 +3830,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.25":
-  version: 18.0.25
-  resolution: "@types/react@npm:18.0.25"
+"@types/react@npm:^18.0.26":
+  version: 18.0.26
+  resolution: "@types/react@npm:18.0.26"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 231d658c45abdef044a716b4502774f1585d8336d73b2f5bd68f181acbfc874b7a457686ecd29b415b43ed0922c309bab7e2cf96832d188a3f4f1b02f2af760a
+  checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
   languageName: node
   linkType: hard
 
@@ -13997,16 +13997,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-import@npm:^15.0.0":
-  version: 15.0.0
-  resolution: "postcss-import@npm:15.0.0"
+"postcss-import@npm:^15.0.1":
+  version: 15.0.1
+  resolution: "postcss-import@npm:15.0.1"
   dependencies:
     postcss-value-parser: ^4.0.0
     read-cache: ^1.0.0
     resolve: ^1.1.7
   peerDependencies:
     postcss: ^8.0.0
-  checksum: e5048072514f33520348c0c5aaedb5db92da72188e72a7367c26a8d851b9cf92e56aeda30d9c7b4ed1a34f84a58959da1b4b27b4aa23d41fc0ce36efe00bf1d1
+  checksum: c673a0247525b3ad9f29d40605866968f2d2525cd107f287171c3baad496385618419d0e0565a792eefb7192311d54d40b2837409cfe2451371a7ef1d0da5125
   languageName: node
   linkType: hard
 
@@ -17636,7 +17636,7 @@ resolve@^2.0.0-next.3:
     "@reduxjs/toolkit": ^1.8.6
     "@types/chrome": ^0.0.203
     "@types/glob-to-regexp": ^0.4.1
-    "@types/react": ^18.0.25
+    "@types/react": ^18.0.26
     "@types/react-color": ^3.0.6
     "@types/react-dom": ^18.0.9
     "@types/remote-redux-devtools": ^0.5.5
@@ -17676,7 +17676,7 @@ resolve@^2.0.0-next.3:
     lodash-webpack-plugin: ^0.11.6
     mini-css-extract-plugin: ^2.7.1
     postcss: ^8.4.19
-    postcss-import: ^15.0.0
+    postcss-import: ^15.0.1
     postcss-loader: ^7.0.2
     prettier: ^2.8.0
     qs: ^6.11.0
