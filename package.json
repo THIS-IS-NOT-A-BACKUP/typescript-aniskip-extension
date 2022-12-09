@@ -78,7 +78,7 @@
     "postcss-loader": "^7.0.2",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.56.1",
+    "sass": "^1.56.2",
     "sass-loader": "^13.2.0",
     "schema-utils": "^4.0.0",
     "style-loader": "^3.3.1",
@@ -95,7 +95,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.6",
-    "@headlessui/react": "^1.7.4",
+    "@headlessui/react": "^1.7.5",
     "@reduxjs/toolkit": "^1.8.6",
     "entities": "^4.4.0",
     "glob-to-regexp": "^0.4.1",
