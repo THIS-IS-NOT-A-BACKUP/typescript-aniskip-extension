@@ -11845,10 +11845,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ky@npm:^0.33.1":
-  version: 0.33.1
-  resolution: "ky@npm:0.33.1"
-  checksum: 47a4b74fd6cb4b80b4fbff1d5500d082e2f437955a3abea70690fa4f080910e4e035e10e1b91f695479e99fe3e95a8e32daa1a7e4e9364386bd562a3d4cff21f
+"ky@npm:^0.33.2":
+  version: 0.33.2
+  resolution: "ky@npm:0.33.2"
+  checksum: bb5b1685b7d639dad5fc0a41a218f76c2400d2a9189bcf747f541633af13b68a7ef12bb8aa971bc1667087789ec5965cc3728e24b693897a2d0cc539d7593655
   languageName: node
   linkType: hard
 
@@ -15603,6 +15603,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "rimraf@npm:4.0.4"
+  bin:
+    rimraf: dist/cjs/src/bin.js
+  checksum: a3296ea15c79fe3da0bae06a484dd8b8ec1e6d3044b02f05ce27575ef23c856e37eef6e71a668ce0e263da594a05ace1e88be6f42200f1fbbf433b57121bae32
+  languageName: node
+  linkType: hard
+
 "rimraf@npm:~2.4.0":
   version: 2.4.5
   resolution: "rimraf@npm:2.4.5"
@@ -17463,7 +17472,7 @@ __metadata:
     fork-ts-checker-webpack-plugin: ^7.3.0
     glob-to-regexp: ^0.4.1
     html-webpack-plugin: ^5.5.0
-    ky: ^0.33.1
+    ky: ^0.33.2
     lodash: ^4.17.21
     lodash-webpack-plugin: ^0.11.6
     mini-css-extract-plugin: ^2.7.2
@@ -17480,7 +17489,7 @@ __metadata:
     react-redux: ^8.0.5
     redux: ^4.2.0
     remote-redux-devtools: ^0.5.16
-    rimraf: ^3.0.2
+    rimraf: ^4.0.4
     sass: ^1.57.1
     sass-loader: ^13.2.0
     schema-utils: ^4.0.0
