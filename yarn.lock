@@ -2657,15 +2657,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:^1.7.8":
-  version: 1.7.8
-  resolution: "@headlessui/react@npm:1.7.8"
+"@headlessui/react@npm:^1.7.9":
+  version: 1.7.9
+  resolution: "@headlessui/react@npm:1.7.9"
   dependencies:
     client-only: ^0.0.1
   peerDependencies:
     react: ^16 || ^17 || ^18
     react-dom: ^16 || ^17 || ^18
-  checksum: 2baf0686b846a9adf38828c95dab370353149234b81a24a2f4f399c8a635027fe3cd04624e52597a7d9b4a1ceebef0508450d625f62ae05433647d403cecd608
+  checksum: e19338daba65853337f3f4a7e8f0fab8ed24be2b753ec2d6e6a051f9da7a6194ea8febf84d1b8b0a36262878628db7c085f9e176ac5ff627474abbc4f370916e
   languageName: node
   linkType: hard
 
@@ -3535,13 +3535,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.211":
-  version: 0.0.211
-  resolution: "@types/chrome@npm:0.0.211"
+"@types/chrome@npm:^0.0.212":
+  version: 0.0.212
+  resolution: "@types/chrome@npm:0.0.212"
   dependencies:
     "@types/filesystem": "*"
     "@types/har-format": "*"
-  checksum: a3a35b1be0316953e466935ea33e3fd52323179eadafb793effff12f2e7753aee6fdf0d167b65a3b3ae66cab33c02ad2f3a545dac99f0e67452303d626724466
+  checksum: 0b6082e18b8dd42c51ec788fe761b61b1a0aa9bd6111bc52f2024387bb79e7bac11670498791192b7ab85cf19ed9fdf7038c7c05332db163d4d9b638690d7746
   languageName: node
   linkType: hard
 
@@ -17367,10 +17367,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^3.5.4":
-  version: 3.5.4
-  resolution: "type-fest@npm:3.5.4"
-  checksum: e2250c8afc80c61126bb484bce767e6bf1bf831af9351bfed1b18f2150be45315b5c1c4fd185691572c348c3a929deda7371fd52adb38b301ef6ef9566776118
+"type-fest@npm:^3.5.5":
+  version: 3.5.5
+  resolution: "type-fest@npm:3.5.5"
+  checksum: 69a046151b16e8a76bd8170b0779bf237be86705cbe6690500a950ddd92a1d8e671ad640e46b4197505bfc74a12181c950535ad2f74106c3c78dd9bb79f4a66a
   languageName: node
   linkType: hard
 
@@ -17410,11 +17410,11 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
     "@babel/runtime": ^7.20.6
-    "@headlessui/react": ^1.7.8
+    "@headlessui/react": ^1.7.9
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^2.0.0
     "@reduxjs/toolkit": ^1.8.6
-    "@types/chrome": ^0.0.211
+    "@types/chrome": ^0.0.212
     "@types/glob-to-regexp": ^0.4.1
     "@types/react": ^18.0.27
     "@types/react-color": ^3.0.6
@@ -17477,7 +17477,7 @@ __metadata:
     style-loader: ^3.3.1
     tailwindcss: ^3.2.4
     to-string-loader: ^1.2.0
-    type-fest: ^3.5.4
+    type-fest: ^3.5.5
     typescript: ^4.9.5
     uuid: ^9.0.0
     wait-on: ^7.0.1
