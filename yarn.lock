@@ -2688,15 +2688,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:^1.7.12":
-  version: 1.7.12
-  resolution: "@headlessui/react@npm:1.7.12"
+"@headlessui/react@npm:^1.7.13":
+  version: 1.7.13
+  resolution: "@headlessui/react@npm:1.7.13"
   dependencies:
     client-only: ^0.0.1
   peerDependencies:
     react: ^16 || ^17 || ^18
     react-dom: ^16 || ^17 || ^18
-  checksum: 4c9cb215040759c41231913389ea5794278b6f1b5242707468d815d8a303adc745585cd2871d7e273d72d84a1e41273bfeb72d0ab2d23ae9e8749a08a9ff57a7
+  checksum: 132e5fce86978b9a6fd9d669fb556acec783debcd8f510c99226b3b3229dad50a13aeed69fc9af66465fc7029487ecfc46e6226f14218b760d5a309e08c0d059
   languageName: node
   linkType: hard
 
@@ -15661,14 +15661,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "rimraf@npm:4.2.0"
+"rimraf@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "rimraf@npm:4.3.0"
   dependencies:
     glob: ^9.2.0
   bin:
     rimraf: dist/cjs/src/bin.js
-  checksum: 885baaec6d8e3a771bb3060f110c29070073a47fdcb26775ae165703173e79e845974dc8ed07e8eb4c3c85f126777968febdb385d0c274ad3b167db326e7f82e
+  checksum: 48498f1eeb9b6b848605d93fa79e7bf3c57bb47807500ee636848dc0fd3b69b6b532f1ce9d4e46c4feeb4c3ff0e8ab85cd177cbbbd65f635f8bc8cb88aee151c
   languageName: node
   linkType: hard
 
@@ -17491,7 +17491,7 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
     "@babel/runtime": ^7.20.6
-    "@headlessui/react": ^1.7.12
+    "@headlessui/react": ^1.7.13
     "@mantiquillal/web-ext-plugin": ^1.5.1
     "@redux-devtools/cli": ^2.0.0
     "@reduxjs/toolkit": ^1.8.6
@@ -17549,7 +17549,7 @@ __metadata:
     react-redux: ^8.0.5
     redux: ^4.2.0
     remote-redux-devtools: ^0.5.16
-    rimraf: ^4.2.0
+    rimraf: ^4.3.0
     sass: ^1.58.3
     sass-loader: ^13.2.0
     schema-utils: ^4.0.0
