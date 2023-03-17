@@ -72,10 +72,10 @@
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.5.0",
     "lodash-webpack-plugin": "^0.11.6",
-    "mini-css-extract-plugin": "^2.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
-    "postcss-loader": "^7.0.2",
+    "postcss-loader": "^7.1.0",
     "prettier": "^2.8.1",
     "rimraf": "^4.4.0",
     "sass": "^1.59.3",
@@ -99,7 +99,7 @@
     "@reduxjs/toolkit": "^1.8.6",
     "entities": "^4.4.0",
     "glob-to-regexp": "^0.4.1",
-    "ky": "^0.33.2",
+    "ky": "^0.33.3",
     "lodash": "^4.17.21",
     "qs": "^6.11.1",
     "react": "^18.2.0",
@@ -120,5 +120,5 @@
   "resolutions": {
     "@types/remote-redux-devtools/redux": "^4.1.2"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.5.0"
 }
