@@ -86,7 +86,7 @@
     "typescript": "^4.9.5",
     "wait-on": "^7.0.1",
     "web-ext": "^7.6.1",
-    "web-ext-submit": "^7.6.0",
+    "web-ext-submit": "^7.6.1",
     "webpack": "^5.79.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
@@ -95,7 +95,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.6",
-    "@headlessui/react": "^1.7.13",
+    "@headlessui/react": "^1.7.14",
     "@reduxjs/toolkit": "^1.8.6",
     "entities": "^4.4.0",
     "glob-to-regexp": "^0.4.1",
