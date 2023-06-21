@@ -14966,9 +14966,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-redux@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "react-redux@npm:8.1.0"
+"react-redux@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "react-redux@npm:8.1.1"
   dependencies:
     "@babel/runtime": ^7.12.1
     "@types/hoist-non-react-statics": ^3.3.1
@@ -14977,7 +14977,6 @@ __metadata:
     react-is: ^18.0.0
     use-sync-external-store: ^1.0.0
   peerDependencies:
-    "@reduxjs/toolkit": ^1 || ^2.0.0-beta.0
     "@types/react": ^16.8 || ^17.0 || ^18.0
     "@types/react-dom": ^16.8 || ^17.0 || ^18.0
     react: ^16.8 || ^17.0 || ^18.0
@@ -14985,8 +14984,6 @@ __metadata:
     react-native: ">=0.59"
     redux: ^4 || ^5.0.0-beta.0
   peerDependenciesMeta:
-    "@reduxjs/toolkit":
-      optional: true
     "@types/react":
       optional: true
     "@types/react-dom":
@@ -14997,7 +14994,7 @@ __metadata:
       optional: true
     redux:
       optional: true
-  checksum: a6b9a07b056677b75596f3eeb56816c1cd611fc52e09ff03e9538cd050223c4f0187f9572b703c1b1d648ad115c5753894f8c709d0f58278e5652026963bf9d6
+  checksum: 370676330727764d78f35e9c5a0ed0591d79482fe9b70fffcab4aa6bcccc6194e4f1ebd818b4b390351dea5557e70d3bd4d95d7a0ac9baa1f45d6bf2230ee713
   languageName: node
   linkType: hard
 
@@ -15901,16 +15898,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.63.4":
-  version: 1.63.4
-  resolution: "sass@npm:1.63.4"
+"sass@npm:^1.63.5":
+  version: 1.63.5
+  resolution: "sass@npm:1.63.5"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 12bde5beff85a7018157d90c8b9d5aec8b56832f89fcfeca146f10936eecf97e669d22fd41f812b3407ed259bbb114d69c9ecbfc7ee9b15308211fb910cdf5eb
+  checksum: eee6a1b5f2bd85c464daa51aca11bd5d8086592099ff3a3a8286f92fafc0ab02edf5aaf781d8e53e446353beff15eff8cdf52052c232ece18efd7945d59172af
   languageName: node
   linkType: hard
 
@@ -17769,10 +17766,10 @@ __metadata:
     react-device-detect: ^2.2.3
     react-dom: ^18.2.0
     react-icons: ^4.9.0
-    react-redux: ^8.1.0
+    react-redux: ^8.1.1
     redux: ^4.2.1
     rimraf: ^5.0.1
-    sass: ^1.63.4
+    sass: ^1.63.5
     sass-loader: ^13.3.2
     schema-utils: ^4.2.0
     sprintf-js: ^1.1.2
