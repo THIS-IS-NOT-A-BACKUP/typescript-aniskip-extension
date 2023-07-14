@@ -8788,9 +8788,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.44.0":
-  version: 8.44.0
-  resolution: "eslint@npm:8.44.0"
+"eslint@npm:^8.45.0":
+  version: 8.45.0
+  resolution: "eslint@npm:8.45.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.4.0
@@ -8817,7 +8817,6 @@ __metadata:
     globals: ^13.19.0
     graphemer: ^1.4.0
     ignore: ^5.2.0
-    import-fresh: ^3.0.0
     imurmurhash: ^0.1.4
     is-glob: ^4.0.0
     is-path-inside: ^3.0.3
@@ -8829,11 +8828,10 @@ __metadata:
     natural-compare: ^1.4.0
     optionator: ^0.9.3
     strip-ansi: ^6.0.1
-    strip-json-comments: ^3.1.0
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: d06309ce4aafb9d27d558c8e5e5aa5cba3bbec3ce8ceccbc7d4b7a35f2b67fd40189159155553270e2e6febeb69bd8a3b60d6241c8f5ddc2ef1702ccbd328501
+  checksum: 3e6dcce5cc43c5e301662db88ee26d1d188b22c177b9f104d7eefd1191236980bd953b3670fe2fac287114b26d7c5420ab48407d7ea1c3a446d6313c000009da
   languageName: node
   linkType: hard
 
@@ -14728,14 +14726,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.25":
-  version: 8.4.25
-  resolution: "postcss@npm:8.4.25"
+"postcss@npm:^8.4.26":
+  version: 8.4.26
+  resolution: "postcss@npm:8.4.26"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 9ed3ab8af43ad5210c28f56f916fd9b8c9f94fbeaebbf645dcf579bc28bdd8056c2a7ecc934668d399b81fedb6128f0c4b299f931e50454964bc911c25a3a0a2
+  checksum: 1cf08ee10d58cbe98f94bf12ac49a5e5ed1588507d333d2642aacc24369ca987274e1f60ff4cbf0081f70d2ab18a5cd3a4a273f188d835b8e7f3ba381b184e57
   languageName: node
   linkType: hard
 
@@ -17974,7 +17972,7 @@ __metadata:
     css-loader: ^6.8.1
     css-minimizer-webpack-plugin: ^5.0.1
     entities: ^4.5.0
-    eslint: ^8.44.0
+    eslint: ^8.45.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.1.0
     eslint-config-prettier: ^8.8.0
@@ -17991,7 +17989,7 @@ __metadata:
     lodash: ^4.17.21
     lodash-webpack-plugin: ^0.11.6
     mini-css-extract-plugin: ^2.7.6
-    postcss: ^8.4.25
+    postcss: ^8.4.26
     postcss-import: ^15.1.0
     postcss-loader: ^7.3.3
     prettier: ^2.8.8
