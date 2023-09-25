@@ -29,11 +29,11 @@
     "start:prod:firefox": "cross-env NODE_ENV=production BROWSER=firefox webpack --config ./webpack/webpack.prod.config.js --watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.20",
+    "@babel/core": "^7.23.0",
     "@babel/plugin-transform-runtime": "^7.22.15",
     "@babel/preset-env": "^7.22.20",
     "@babel/preset-react": "^7.22.15",
-    "@babel/preset-typescript": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.0",
     "@mantiquillal/web-ext-plugin": "^1.5.1",
     "@redux-devtools/cli": "^3.0.2",
     "@types/chrome": "^0.0.246",
@@ -45,7 +45,7 @@
     "@types/string-similarity": "^4.0.0",
     "@types/tailwindcss": "^3.0.11",
     "@types/uuid": "^9.0.4",
-    "@types/webpack": "^5.28.2",
+    "@types/webpack": "^5.28.3",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "autoprefixer": "^10.4.16",
@@ -93,10 +93,10 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.15",
+    "@babel/runtime": "^7.23.1",
     "@headlessui/react": "^1.7.17",
     "@redux-devtools/remote": "^0.8.1",
-    "@reduxjs/toolkit": "^1.9.5",
+    "@reduxjs/toolkit": "^1.9.6",
     "entities": "^4.5.0",
     "glob-to-regexp": "^0.4.1",
     "ky": "^0.33.3",
