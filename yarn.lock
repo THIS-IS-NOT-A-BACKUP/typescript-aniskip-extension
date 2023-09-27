@@ -4645,13 +4645,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-color@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "@types/react-color@npm:3.0.6"
+"@types/react-color@npm:^3.0.7":
+  version: 3.0.7
+  resolution: "@types/react-color@npm:3.0.7"
   dependencies:
     "@types/react": "*"
     "@types/reactcss": "*"
-  checksum: 8cd881d6eb725190be942c1d71f7917d3dd1b418417740f64fa6c03ae3ba16cb91d07c4b3b348cf5bae20071c8ca5d4aaf514c9a5318077d5e50bd782a5e8da2
+  checksum: 0463679bdeb3680a67cb5faa7568f68c568512c4eed97b4a4548f17857613894f6d8aaf5aca005df037e1c148831d439131b6bca889a7ad2b07caea9c4c9aedd
   languageName: node
   linkType: hard
 
@@ -17452,14 +17452,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "rimraf@npm:5.0.4"
+"rimraf@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "rimraf@npm:5.0.5"
   dependencies:
     glob: ^10.3.7
   bin:
     rimraf: dist/esm/bin.mjs
-  checksum: 44230119678153dc46f8e634947123e2a516689818cb1ca4b03c470cb8eece0f6a29135b9c8f785d30e50c34175a58927b8033a9eef0e154a9fab81b80712112
+  checksum: d66eef829b2e23b16445f34e73d75c7b7cf4cbc8834b04720def1c8f298eb0753c3d76df77325fad79d0a2c60470525d95f89c2475283ad985fd7441c32732d1
   languageName: node
   linkType: hard
 
@@ -19434,10 +19434,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "type-fest@npm:4.3.1"
-  checksum: 04e0f073dcc31c113c1b8856c089b388e7e9f4383a9ed72cc1466a89ec50d9d67678844eeec342b5a1ce71b21e817764d4f067aa148f6bcb5df9005ff3803382
+"type-fest@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "type-fest@npm:4.3.2"
+  checksum: 8ba1b3d43e24888052d8c8859ae9b53124f8200c05808ec9247917ac3441612a7b36bf148a5b14150ef73ce7bad3cdca65ae923d37d2ae466c2b814d369fb975
   languageName: node
   linkType: hard
 
@@ -19532,7 +19532,7 @@ __metadata:
     "@types/chrome": ^0.0.246
     "@types/glob-to-regexp": ^0.4.2
     "@types/react": ^18.2.17
-    "@types/react-color": ^3.0.6
+    "@types/react-color": ^3.0.7
     "@types/react-dom": ^18.2.7
     "@types/sprintf-js": ^1.1.2
     "@types/string-similarity": ^4.0.0
@@ -19581,7 +19581,7 @@ __metadata:
     react-icons: ^4.11.0
     react-redux: ^8.1.2
     redux: ^4.2.1
-    rimraf: ^5.0.4
+    rimraf: ^5.0.5
     sass: ^1.68.0
     sass-loader: ^13.3.2
     schema-utils: ^4.2.0
@@ -19590,7 +19590,7 @@ __metadata:
     style-loader: ^3.3.3
     tailwindcss: ^3.3.3
     to-string-loader: ^1.2.0
-    type-fest: ^4.3.1
+    type-fest: ^4.3.2
     typescript: ^5.2.2
     uuid: ^9.0.1
     wait-on: ^7.0.1
