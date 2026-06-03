@@ -1,7 +1,7 @@
 import { Transition } from '@headlessui/react';
 import React, { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { LinkButton } from '../../../components';
 import {
   changelogNotificationDismissed,

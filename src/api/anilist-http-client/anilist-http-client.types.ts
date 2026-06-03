@@ -30,7 +30,7 @@ export type MediaFormat = keyof typeof MEDIA_FORMAT_NAMES;
 export type Media<
   MT extends Partial<MediaTitle> | undefined = undefined,
   MCI extends Partial<MediaCoverImage> | undefined = undefined,
-  MF extends MediaFormat | undefined = undefined
+  MF extends MediaFormat | undefined = undefined,
 > = {
   idMal: number;
 } & (MT extends undefined

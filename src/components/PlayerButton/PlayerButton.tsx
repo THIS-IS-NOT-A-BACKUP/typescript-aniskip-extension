@@ -82,12 +82,10 @@ export function PlayerButton({
    * Remove mouse moved timeout on component unmount.
    */
   useEffect(
-    () => () => {
-      if (!mouseMovedTimeoutRef.current) {
-        return;
+    (): (() => void) => () => {
+      if (mouseMovedTimeoutRef.current) {
+        clearTimeout(mouseMovedTimeoutRef.current);
       }
-
-      clearTimeout(mouseMovedTimeoutRef.current);
     },
     []
   );

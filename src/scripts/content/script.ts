@@ -1,6 +1,7 @@
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { Message } from '../background';
 import { PageFactory } from '../../pages/page-factory';
+import { getPageById } from '../../utils/page-list';
 
 const page = PageFactory.getPage(window.location.href);
 
@@ -21,7 +22,9 @@ document.addEventListener('DOMContentLoaded', injectOverlayListener);
  *
  * @param message Message containing the type of action and the payload.
  */
-const messageHandler = (message: Message): any => {
+const messageHandler = (rawMessage: unknown): any => {
+  const message = rawMessage as Message;
+
   switch (message.type) {
     case 'get-episode-information': {
       (async (): Promise<void> => {
@@ -44,6 +47,32 @@ const messageHandler = (message: Message): any => {
         browser.runtime.sendMessage({
           payload: { malId, providerName, episodeNumber },
           uuid: message.uuid,
+        } as Message);
+      })();
+      break;
+    }
+    case 'fetch-skips-for-page': {
+      (async (): Promise<void> => {
+        const { pageId } = message.payload || {};
+        const PageClass = getPageById(pageId);
+
+        if (!PageClass) {
+          return;
+        }
+
+        const manualPage = new PageClass();
+        await manualPage.applyRules();
+        const malId = await manualPage.getMalId();
+        const episodeNumber = manualPage.getEpisodeNumber();
+
+        if (malId === 0) {
+          manualPage.openOverlay();
+          return;
+        }
+
+        browser.runtime.sendMessage({
+          type: 'initialise-skip-times',
+          payload: { malId, episodeNumber },
         } as Message);
       })();
       break;

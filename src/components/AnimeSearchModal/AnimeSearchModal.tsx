@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { debounce } from 'lodash';
 import { BiSearch } from 'react-icons/bi';
 import { AnilistHttpClient, MEDIA_FORMAT_NAMES } from '../../api';
@@ -65,7 +65,7 @@ export function AnimeSearchModal({
               format: searchResult.format,
               seasonYear: searchResult.seasonYear,
               coverImage: searchResult.coverImage.medium,
-            } as SearchResult)
+            }) as SearchResult
         );
 
       setSearchResults(results);
@@ -139,9 +139,8 @@ export function AnimeSearchModal({
         return;
       }
 
-      const searchResponse = await anilistHttpClient.current?.searchCoverImage(
-        detectedMalId
-      );
+      const searchResponse =
+        await anilistHttpClient.current?.searchCoverImage(detectedMalId);
       const media = searchResponse.data.Media;
 
       const searchResult: SearchResult = {

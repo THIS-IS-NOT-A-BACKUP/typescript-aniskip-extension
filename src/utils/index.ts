@@ -1,3 +1,4 @@
+export * from './colours';
 export * from './http';
 export * from './keybinds';
 export * from './message';

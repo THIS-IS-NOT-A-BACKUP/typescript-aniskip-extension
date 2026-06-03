@@ -1,5 +1,5 @@
 import stringSimilarity from 'string-similarity';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import {
   AniskipHttpClient,
   MalsyncHttpClient,
@@ -64,7 +64,7 @@ export abstract class BasePage implements Page {
     if (!rules) {
       try {
         ({ rules } = await aniskipHttpClient.getRules(malId));
-      } catch (error: any) {
+      } catch {
         return;
       }
 
@@ -198,9 +198,8 @@ export abstract class BasePage implements Page {
     const anilistHttpClient = new AnilistHttpClient();
     const sanitisedTitle = title.replace(/\(.*\)/, '').trim();
 
-    const searchResponse = await anilistHttpClient.searchTitleSynonyms(
-      sanitisedTitle
-    );
+    const searchResponse =
+      await anilistHttpClient.searchTitleSynonyms(sanitisedTitle);
     const searchResults = searchResponse.data.Page.media;
 
     let closest = 0;
@@ -311,9 +310,9 @@ export abstract class BasePage implements Page {
         title.toLocaleLowerCase()
       );
 
-      if (similarity >= bestSimilarity && manualTitleMalIdMap[title]) {
+      if (similarity >= bestSimilarity && manualTitleMalIdMap[titleVariant]) {
         bestSimilarity = similarity;
-        closest = manualTitleMalIdMap[title]!;
+        closest = manualTitleMalIdMap[titleVariant]!;
       }
     });
 

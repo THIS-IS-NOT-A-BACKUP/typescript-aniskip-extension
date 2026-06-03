@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { ColorResult } from 'react-color';
 import { debounce } from 'lodash';
 import { sprintf } from 'sprintf-js';
@@ -44,6 +44,8 @@ import {
   selectSkipOptions,
   selectSkipTimeIndicatorColours,
   selectSkipTimeLength,
+  selectSelectedPageId,
+  selectedPageIdUpdated,
   skipOptionUpdated,
   skipOptionsUpdated,
   skipTimeIndicatorColourUpdated,
@@ -52,6 +54,7 @@ import {
 } from '../../../data';
 import { ColourPicker } from '../ColourPicker';
 import { serialiseKeybind, useDispatch, useSelector } from '../../../utils';
+import { getAvailablePages } from '../../../utils/page-list';
 import { Setting } from '../Setting';
 
 export function SettingsPage(): JSX.Element {
@@ -69,8 +72,10 @@ export function SettingsPage(): JSX.Element {
   const isPreviewButtonEmulatingAutoSkip = useSelector(
     selectIsPreviewButtonEmulatingAutoSkip
   );
+  const selectedPageId = useSelector(selectSelectedPageId);
   const keybindInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
+  const pageDropdownOptions = getAvailablePages();
 
   const skipOptionDropdownOptions = [
     {
@@ -112,6 +117,31 @@ export function SettingsPage(): JSX.Element {
     };
 
     browser.storage.local.set(cacheCleared);
+  };
+
+  /**
+   * Handles page selection changes.
+   *
+   * @param pageId The selected page id.
+   */
+  const onChangeSelectedPage = (pageId: string): void => {
+    dispatch(selectedPageIdUpdated(pageId));
+  };
+
+  /**
+   * Triggers manual fetching of skips for the selected page.
+   */
+  const onClickFetchSkipsForPage = (): void => {
+    browser.tabs.query({}).then((tabs: any[]) => {
+      tabs.forEach((tab: any) => {
+        if (tab.id) {
+          browser.tabs.sendMessage(tab.id, {
+            type: 'fetch-skips-for-page',
+            payload: { pageId: selectedPageId },
+          });
+        }
+      });
+    });
   };
 
   /**
@@ -567,6 +597,31 @@ export function SettingsPage(): JSX.Element {
         Miscellaneous options
       </h2>
       <div className="space-y-2 mt-1">
+        <div className="flex items-center justify-between">
+          <div className="text-xs text-gray-700 uppercase font-semibold">
+            Select script
+          </div>
+        </div>
+        <div className="text-sm text-gray-500">
+          Manually select a site script and fetch skips if URLs have changed.
+        </div>
+      </div>
+      <div className="mt-4 space-y-3">
+        <Dropdown
+          className="text-sm"
+          value={selectedPageId}
+          onChange={onChangeSelectedPage}
+          options={pageDropdownOptions}
+        />
+        <DefaultButton
+          className="sm:w-auto w-full border-2 border-primary text-primary hover:border-amber-600 hover:text-amber-600 font-medium"
+          onClick={onClickFetchSkipsForPage}
+        >
+          Fetch skips for selected site
+        </DefaultButton>
+      </div>
+      <hr className="mt-6" />
+      <div className="space-y-2 mt-6">
         <div className="flex items-center justify-between">
           <div className="text-xs text-gray-700 uppercase font-semibold">
             Cache

@@ -5,7 +5,7 @@ import {
   SkipType,
   VoteType,
 } from '../../api/aniskip-http-client/aniskip-http-client.types';
-import { DEFAULT_COLOUR_PICKER_COLOURS } from '../../options/components/ColourPicker';
+import { DEFAULT_COLOUR_PICKER_COLOURS } from '../../utils/colours';
 
 export type SkipOptionType = 'disabled' | 'auto-skip' | 'manual-skip';
 
@@ -161,7 +161,8 @@ export const DEFAULT_LOCAL_OPTIONS: LocalOptions = {
 export type MessageType =
   | 'fetch'
   | 'get-episode-information'
-  | 'initialise-skip-times';
+  | 'initialise-skip-times'
+  | 'fetch-skips-for-page';
 
 export type Message = {
   type: MessageType;

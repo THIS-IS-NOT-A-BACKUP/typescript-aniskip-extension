@@ -87,10 +87,6 @@ module.exports = () => {
     },
   ];
 
-  if (process.env.NODE_ENV === 'development') {
-    manifestTemplate.permissions.push('*://localhost/*');
-  }
-
   switch (browser) {
     case 'chromium':
       return merge(manifestTemplate, {
@@ -102,7 +98,12 @@ module.exports = () => {
           default_popup: 'popup.html',
           chrome_style: false,
         },
-        host_permissions: apiPermissions,
+        host_permissions: [
+          ...apiPermissions,
+          ...(process.env.NODE_ENV === 'development'
+            ? ['http://localhost:5000/*']
+            : []),
+        ],
         web_accessible_resources: [
           {
             resources: [windowProxyScript],

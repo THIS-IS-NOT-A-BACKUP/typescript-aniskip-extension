@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaChevronDown, FaChevronUp, FaPlay, FaTimes } from 'react-icons/fa';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import {
   AniskipHttpClient,
   SkipTime,
@@ -48,9 +48,10 @@ export function VoteMenu(): JSX.Element {
     setPlayerDuration(duration);
 
     (async (): Promise<void> => {
-      const currentSkipTimesVoted = (
-        await browser.storage.local.get({ skipTimesVoted: {} })
-      ).skipTimesVoted;
+      const { skipTimesVoted: currentSkipTimesVoted } =
+        (await browser.storage.local.get({ skipTimesVoted: {} })) as {
+          skipTimesVoted: Record<string, VoteType>;
+        };
 
       setSkipTimesVoted(currentSkipTimesVoted);
     })();
@@ -89,9 +90,11 @@ export function VoteMenu(): JSX.Element {
       }
 
       const { skipTimesVoted: currentSkipTimesVoted } =
-        await browser.storage.local.get({ skipTimesVoted: {} });
+        (await browser.storage.local.get({ skipTimesVoted: {} })) as {
+          skipTimesVoted: Record<string, VoteType>;
+        };
 
-      const updatedSkipTimesVoted = {
+      const updatedSkipTimesVoted: Record<string, VoteType> = {
         ...skipTimesVoted,
         ...currentSkipTimesVoted,
         [skipId]: 'upvote',
@@ -118,9 +121,11 @@ export function VoteMenu(): JSX.Element {
       }
 
       const { skipTimesVoted: currentSkipTimesVoted } =
-        await browser.storage.local.get({ skipTimesVoted: {} });
+        (await browser.storage.local.get({ skipTimesVoted: {} })) as {
+          skipTimesVoted: Record<string, VoteType>;
+        };
 
-      const updatedSkipTimesVoted = {
+      const updatedSkipTimesVoted: Record<string, VoteType> = {
         ...skipTimesVoted,
         ...currentSkipTimesVoted,
         [skipId]: 'downvote',

@@ -26,7 +26,10 @@ export function PlayerButtons(): JSX.Element {
    *
    * @param value New hover value.
    */
-  const onMouseEvent = (value: boolean) => () => setIsHovered(value);
+  const onMouseEvent =
+    (value: boolean): (() => void) =>
+    () =>
+      setIsHovered(value);
 
   return (
     <div

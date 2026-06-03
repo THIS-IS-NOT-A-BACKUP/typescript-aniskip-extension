@@ -1,4 +1,4 @@
-import { browser, Runtime } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { v4 as uuidv4 } from 'uuid';
 import ky from 'ky';
 import {
@@ -16,10 +16,8 @@ import { parseResponse, waitForMessage } from '../../utils';
  * @param message Message containing the type of action and the payload.
  * @param sender Sender of the message.
  */
-const messageHandler = (
-  message: Message,
-  sender: Runtime.MessageSender
-): Promise<any> => {
+const messageHandler = (rawMessage: unknown, sender: any): Promise<any> => {
+  const message = rawMessage as Message;
   const tabId = sender.tab?.id;
 
   if (!tabId) {
@@ -39,6 +37,14 @@ const messageHandler = (
             ok: response.ok,
           };
         } catch (err: any) {
+          if (!err.response) {
+            return {
+              data: { message: err.message },
+              status: 0,
+              ok: false,
+            };
+          }
+
           return {
             data: await parseResponse(err.response),
             status: err.response.status,
@@ -65,16 +71,17 @@ browser.runtime.onMessage.addListener(messageHandler);
  * Adds the default sync options if they do not exist.
  */
 const addDefaultSyncOptions = async (): Promise<void> => {
-  const currentSyncOptions = await browser.storage.sync.get(
+  const currentSyncOptions = (await browser.storage.sync.get(
     DEFAULT_SYNC_OPTIONS
-  );
+  )) as SyncOptions;
+  const mutableSyncOptions = currentSyncOptions as Record<string, any>;
 
   // If the key does not exist, add a default for it.
   Object.keys(DEFAULT_SYNC_OPTIONS).forEach((key) => {
     if (!Object.prototype.hasOwnProperty.call(currentSyncOptions, key)) {
       const typedKey = key as keyof SyncOptions;
 
-      currentSyncOptions[typedKey] = DEFAULT_SYNC_OPTIONS[typedKey];
+      mutableSyncOptions[typedKey] = DEFAULT_SYNC_OPTIONS[typedKey];
     }
   });
 
@@ -124,16 +131,17 @@ const addDefaultSyncOptions = async (): Promise<void> => {
  * Adds the default local options if they do not exist.
  */
 const addDefaultLocalOptions = async (): Promise<void> => {
-  const currentLocalOptions = await browser.storage.local.get(
+  const currentLocalOptions = (await browser.storage.local.get(
     DEFAULT_LOCAL_OPTIONS
-  );
+  )) as LocalOptions;
+  const mutableLocalOptions = currentLocalOptions as Record<string, any>;
 
   // If the key does not exist, add a default for it.
   Object.keys(DEFAULT_LOCAL_OPTIONS).forEach((key) => {
     if (!Object.prototype.hasOwnProperty.call(currentLocalOptions, key)) {
       const typedKey = key as keyof LocalOptions;
 
-      currentLocalOptions[typedKey] = DEFAULT_LOCAL_OPTIONS[typedKey];
+      mutableLocalOptions[typedKey] = DEFAULT_LOCAL_OPTIONS[typedKey];
     }
   });
 
@@ -166,7 +174,7 @@ const showChangelogNotification = async (): Promise<void> =>
 /**
  * Set default user settings on installation.
  */
-browser.runtime.onInstalled.addListener((details) => {
+browser.runtime.onInstalled.addListener((details: any) => {
   switch (details.reason) {
     case 'install': {
       browser.storage.sync.set(DEFAULT_SYNC_OPTIONS);

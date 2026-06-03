@@ -1,4 +1,4 @@
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import {
   PlayerButtonsRenderer,
   MenusRenderer,
@@ -347,11 +347,15 @@ export class BasePlayer implements Player {
   /**
    * Adds the opening and ending skip invervals.
    */
-  async initialiseSkipTimes(): Promise<void> {
+  async initialiseSkipTimes(
+    episodeInformation?: Pick<Message, 'payload'>['payload']
+  ): Promise<void> {
     const aniskipHttpClient = new AniskipHttpClient();
-    const { malId, episodeNumber, error } = await browser.runtime.sendMessage({
-      type: 'get-episode-information',
-    } as Message);
+    const { malId, episodeNumber, error } =
+      episodeInformation ??
+      (await browser.runtime.sendMessage({
+        type: 'get-episode-information',
+      } as Message));
 
     if (error) {
       return;
@@ -365,29 +369,32 @@ export class BasePlayer implements Player {
     });
 
     const episodeLength = this.getDuration();
-
     if (skipTimeTypes.length === 0 || episodeLength === 0) {
       return;
     }
 
-    const getSkipTimesResponse = await aniskipHttpClient.getSkipTimes(
-      malId,
-      episodeNumber,
-      skipTimeTypes,
-      episodeLength
-    );
+    try {
+      const getSkipTimesResponse = await aniskipHttpClient.getSkipTimes(
+        malId,
+        episodeNumber,
+        skipTimeTypes,
+        episodeLength
+      );
 
-    if (!getSkipTimesResponse.found) {
-      return;
+      if (!getSkipTimesResponse.found) {
+        return;
+      }
+
+      // Remove duplicate 'op' and 'ed' skip subtypes.
+      const filteredSkipTypes = this.filterDuplicateSkipType(
+        'mixed-op',
+        this.filterDuplicateSkipType('mixed-ed', getSkipTimesResponse.results)
+      );
+
+      filteredSkipTypes.forEach((skipTime) => this.addSkipTime(skipTime));
+    } catch {
+      // Skip times are optional; playback should continue if the API fails.
     }
-
-    // Remove duplicate 'op' and 'ed' skip subtypes.
-    const filteredSkipTypes = this.filterDuplicateSkipType(
-      'mixed-op',
-      this.filterDuplicateSkipType('mixed-ed', getSkipTimesResponse.results)
-    );
-
-    filteredSkipTypes.forEach((skipTime) => this.addSkipTime(skipTime));
   }
 
   /**

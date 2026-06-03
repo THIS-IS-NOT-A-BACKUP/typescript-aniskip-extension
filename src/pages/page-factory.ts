@@ -1,29 +1,11 @@
 import globToRegExp from 'glob-to-regexp';
 import { Page } from './base-page.types';
-import { AniMixPlay } from './animixplay';
 import { Animepahe } from './animepahe';
 import { Crunchyroll } from './crunchyroll';
 import { CrunchyrollBeta } from './crunchyroll-beta';
-import { Gogoanime } from './gogoanime';
-import { NekoSama } from './nekosama';
-import { Nineanime } from './nineanime';
-import { Twistmoe } from './twistmoe';
-import { Zoro } from './zoro';
-import { AnimeGo } from './animego';
 
 export class PageFactory {
-  static pages = [
-    AniMixPlay,
-    Animepahe,
-    Crunchyroll,
-    CrunchyrollBeta,
-    Gogoanime,
-    NekoSama,
-    Nineanime,
-    Twistmoe,
-    Zoro,
-    AnimeGo,
-  ];
+  static pages = [Animepahe, Crunchyroll, CrunchyrollBeta];
 
   /**
    * Obtains the page object from the domain.
