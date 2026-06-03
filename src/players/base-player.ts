@@ -362,9 +362,9 @@ export class BasePlayer implements Player {
     }
 
     const skipTimeTypes: SkipType[] = [];
-    Object.entries(this.skipOptions).forEach(([skipType, value]) => {
+    (Object.entries(this.skipOptions) as [SkipType, string][]).forEach(([skipType, value]) => {
       if (value !== 'disabled') {
-        skipTimeTypes.push(skipType as SkipType);
+        skipTimeTypes.push(skipType);
       }
     });
 
@@ -436,16 +436,16 @@ export class BasePlayer implements Player {
   /**
    * Injects the submit menu button into the player controls.
    */
-  injectSubmitMenu(): void {
-    const videoContainer = this.getVideoContainer();
-    if (
-      videoContainer &&
-      !document.getElementById(this.playerButtonsRenderer.id)
-    ) {
-      videoContainer.appendChild(this.menusRenderer.shadowRootContainer);
-      this.menusRenderer.render();
+    injectSubmitMenu(): void {
+      const videoContainer = this.getVideoContainer();
+      if (
+        videoContainer &&
+        !document.getElementById(this.menusRenderer.id)
+      ) {
+        videoContainer.appendChild(this.menusRenderer.shadowRootContainer);
+        this.menusRenderer.render();
+      }
     }
-  }
 
   /**
    * Injects the submit menu button into the player.

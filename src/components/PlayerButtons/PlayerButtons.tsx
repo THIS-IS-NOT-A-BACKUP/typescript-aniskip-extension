@@ -41,6 +41,7 @@ export function PlayerButtons(): JSX.Element {
     >
       <Transition
         show={isVoteMenuButtonVisible}
+        as={React.Fragment} // <--- ADD THIS LINE HERE
         enter="transition-all duration-200 ease-in-out pointer-events-none"
         enterFrom="opacity-0 w-0"
         enterTo={`opacity-100 w-8 vote-menu-button--${variant} vote-menu-button--${domainName}`}
