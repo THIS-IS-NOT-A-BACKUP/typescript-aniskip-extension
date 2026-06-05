@@ -2,21 +2,7 @@
   "variant": "plyr",
   "playerUrls": [
     "*://*.vvid.cc/*",
-    "*://adblockstreamtape.site/*",
-    "*://akane-shinjou.github.io/*",
-    "*://akaneshinjou.github.io/play/*",
-    "*://animixplay.to/api/*",
-    "*://animixplay.to/player.html*",
-    "*://animixplay.to/v*/*",
-    "*://aniwatch.me/*",
-    "*://jzscuqezoqkcpvy.win/*",
     "*://kwik.cx/e/*",
-    "*://kwik.si/e/*",
-    "*://plyr.link/*",
-    "*://scloud.online/*",
-    "*://stape.fun/*",
-    "*://storage.googleapis.com/*",
-    "*://streamta.site/*",
     "*://streamtape.com/*"
   ],
   "selectorStrings": {

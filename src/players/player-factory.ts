@@ -5,9 +5,10 @@ import { Plyr } from './plyr';
 import { Crunchyroll } from './crunchyroll';
 import { Flowplayer } from './flowplayer';
 import { Player } from './base-player.types';
+import { Ao } from './ao';
 
 export class PlayerFactory {
-  static players = [Crunchyroll, Jw, Plyr, Videojs, Flowplayer];
+  static players = [Crunchyroll, Jw, Plyr, Videojs, Flowplayer, Ao];
 
   /**
    * Obtains the player object from the domain.

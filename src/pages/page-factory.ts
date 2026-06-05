@@ -3,9 +3,10 @@ import { Page } from './base-page.types';
 import { Animepahe } from './animepahe';
 import { Crunchyroll } from './crunchyroll';
 import { CrunchyrollBeta } from './crunchyroll-beta';
+import { AnimeOnsen } from './animeonsen';
 
 export class PageFactory {
-  static pages = [Animepahe, Crunchyroll, CrunchyrollBeta];
+  static pages = [Animepahe, Crunchyroll, CrunchyrollBeta, AnimeOnsen];
 
   /**
    * Obtains the page object from the domain.
