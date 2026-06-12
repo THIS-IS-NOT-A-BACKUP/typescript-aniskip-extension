@@ -3,7 +3,10 @@ import { Tooltip } from '../Tooltip';
 import { PlayerButtonProps } from './PlayerButton.types';
 
 // Wrapped with React.forwardRef to allow parent libraries to read the underlying HTML button
-export const PlayerButton = React.forwardRef<HTMLButtonElement, PlayerButtonProps>(
+export const PlayerButton = React.forwardRef<
+  HTMLButtonElement,
+  PlayerButtonProps
+>(
   (
     {
       className = '',

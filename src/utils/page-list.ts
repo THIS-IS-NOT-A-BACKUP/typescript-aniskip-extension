@@ -11,13 +11,18 @@ export type PageInfo = {
  */
 export function getAvailablePages(): PageInfo[] {
   return PageFactory.pages.map((PageClass, index) => {
-    // Create a temporary instance to get provider name
-    const tempInstance = new PageClass();
+    const metadata = PageClass.getMetadata();
+    const pageUrl = metadata.pageUrls[0] ?? '';
+    const pageHost = pageUrl.match(/:\/\/(?:\*\.)?([^/*]+)/)?.[1] ?? 'Unknown';
     const providerName =
-      tempInstance.constructor.name
-        .replace(/([A-Z])/g, ' $1')
-        .trim()
-        .replace(/  +/g, ' ') || 'Unknown';
+      pageHost === 'beta.crunchyroll.com'
+        ? 'Crunchyroll Beta'
+        : pageHost
+            .replace(/^www\./, '')
+            .split('.')
+            .shift()!
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, (letter) => letter.toUpperCase());
 
     return {
       id: `page-${index}`,

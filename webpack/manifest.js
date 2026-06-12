@@ -67,7 +67,7 @@ const getPlayerUrls = () => {
     )
     .flat();
 
-  return playerUrls;
+  return [...new Set([...playerUrls, '<all_urls>'])];
 };
 
 module.exports = () => {

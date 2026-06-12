@@ -18,11 +18,6 @@ import { parseResponse, waitForMessage } from '../../utils';
  */
 const messageHandler = (rawMessage: unknown, sender: any): Promise<any> => {
   const message = rawMessage as Message;
-  const tabId = sender.tab?.id;
-
-  if (!tabId) {
-    return Promise.reject(new Error('Tab id not found'));
-  }
 
   switch (message.type) {
     case 'fetch': {
@@ -55,8 +50,35 @@ const messageHandler = (rawMessage: unknown, sender: any): Promise<any> => {
     }
     default: {
       return (async (): Promise<any> => {
+        const [activeTab] = sender.tab?.id
+          ? [sender.tab]
+          : await browser.tabs.query({
+              active: true,
+              currentWindow: true,
+            });
+        const tabId = activeTab?.id;
+
+        if (!tabId) {
+          return { error: 'Tab id not found' };
+        }
+
         const uuid = uuidv4();
-        browser.tabs.sendMessage(tabId, { ...message, uuid } as Message);
+        try {
+          await browser.tabs.sendMessage(tabId, {
+            ...message,
+            uuid,
+          } as Message);
+        } catch (error: any) {
+          return { error: error.message };
+        }
+
+        if (
+          message.type === 'fetch-skips-for-page' ||
+          message.type === 'initialise-skip-times'
+        ) {
+          return {};
+        }
+
         const response = await waitForMessage(uuid);
 
         return response?.payload;

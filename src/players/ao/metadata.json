@@ -1,7 +1,7 @@
 {
   "variant": "ao",
   "playerUrls": [
-    "*://*.animeonsen.x/watch/*"
+    "*://*.animeonsen.xyz/watch/*"
   ],
   "selectorStrings": {
     "default": {

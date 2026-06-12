@@ -55,6 +55,7 @@ import {
 import { ColourPicker } from '../ColourPicker';
 import { serialiseKeybind, useDispatch, useSelector } from '../../../utils';
 import { getAvailablePages } from '../../../utils/page-list';
+import { getPlayerIdByPageId } from '../../../utils/player-list';
 import { Setting } from '../Setting';
 
 export function SettingsPage(): JSX.Element {
@@ -132,16 +133,15 @@ export function SettingsPage(): JSX.Element {
    * Triggers manual fetching of skips for the selected page.
    */
   const onClickFetchSkipsForPage = (): void => {
-    browser.tabs.query({}).then((tabs: any[]) => {
-      tabs.forEach((tab: any) => {
-        if (tab.id) {
-          browser.tabs.sendMessage(tab.id, {
-            type: 'fetch-skips-for-page',
-            payload: { pageId: selectedPageId },
-          });
-        }
-      });
-    });
+    browser.runtime
+      .sendMessage({
+        type: 'fetch-skips-for-page',
+        payload: {
+          pageId: selectedPageId,
+          playerId: getPlayerIdByPageId(selectedPageId),
+        },
+      })
+      .catch(() => undefined);
   };
 
   /**

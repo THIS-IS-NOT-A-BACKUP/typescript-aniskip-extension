@@ -53,7 +53,11 @@ const messageHandler = (rawMessage: unknown): any => {
     }
     case 'fetch-skips-for-page': {
       (async (): Promise<void> => {
-        const { pageId } = message.payload || {};
+        const { pageId, playerId } = message.payload || {};
+        if (!pageId) {
+          return;
+        }
+
         const PageClass = getPageById(pageId);
 
         if (!PageClass) {
@@ -72,7 +76,7 @@ const messageHandler = (rawMessage: unknown): any => {
 
         browser.runtime.sendMessage({
           type: 'initialise-skip-times',
-          payload: { malId, episodeNumber },
+          payload: { malId, episodeNumber, playerId },
         } as Message);
       })();
       break;

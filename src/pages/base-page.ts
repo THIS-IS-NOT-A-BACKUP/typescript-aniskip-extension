@@ -50,10 +50,10 @@ export abstract class BasePage implements Page {
   async applyRules(): Promise<void> {
     const aniskipHttpClient = new AniskipHttpClient();
     const malId = await this.getMalId();
-    
+
     // MAL id not found automatically.
     if (malId === 0) {
-      console.log("AniSkip MAL ID lookup failed");
+      console.log('AniSkip MAL ID lookup failed');
       return;
     }
 
