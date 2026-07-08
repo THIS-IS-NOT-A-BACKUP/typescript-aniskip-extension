@@ -40,7 +40,6 @@ const initialSettingsState: SettingsState = {
     {},
     ...KEYBIND_TYPES.map((type) => ({ [type]: false }))
   ),
-  selectedPageId: 'page-0',
 };
 
 /**
@@ -95,11 +94,6 @@ export const selectIsPreviewButtonEmulatingAutoSkip: Selector<
   StateSlice<SettingsState, 'settings'>,
   boolean
 > = (state) => state.settings.isPreviewButtonEmulatingAutoSkip;
-
-export const selectSelectedPageId: Selector<
-  StateSlice<SettingsState, 'settings'>,
-  string
-> = (state) => state.settings.selectedPageId;
 
 /**
  * Slice definition.
@@ -173,9 +167,6 @@ const settingsStateSlice = createSlice({
     ) => {
       state.isPreviewButtonEmulatingAutoSkip = action.payload;
     },
-    selectedPageIdUpdated: (state, action: PayloadAction<string>) => {
-      state.selectedPageId = action.payload;
-    },
   },
 });
 
@@ -194,6 +185,5 @@ export const {
   changelogNotificationUpdated,
   changelogNotificationDismissed,
   isPreviewButtonEmulatingAutoSkipUpdated,
-  selectedPageIdUpdated,
 } = settingsStateSlice.actions;
 export default settingsStateSlice.reducer;

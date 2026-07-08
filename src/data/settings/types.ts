@@ -8,7 +8,6 @@ import {
 
 export type SettingsState = {
   isUserEditingKeybind: Record<KeybindType, boolean>;
-  selectedPageId: string;
 } & Omit<SyncOptions, 'userId'>;
 
 export type SkipOptionUpdatedPayload = {

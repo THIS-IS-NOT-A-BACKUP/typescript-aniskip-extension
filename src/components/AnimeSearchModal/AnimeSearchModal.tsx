@@ -11,8 +11,6 @@ import {
   useDispatch,
   useSelector,
 } from '../../utils';
-import { getAvailablePages } from '../../utils/page-list';
-import { getPlayerIdByPageId } from '../../utils/player-list';
 import { AnimeSearchModalProps, SearchResult } from './AnimeSearchModal.types';
 import {
   DEFAULT_SYNC_OPTIONS,
@@ -35,10 +33,6 @@ export function AnimeSearchModal({
 }: AnimeSearchModalProps): JSX.Element {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [animeDetected, setAnimeDetected] = useState<SearchResult>();
-  const availablePages = useRef(getAvailablePages());
-  const [selectedPageId, setSelectedPageId] = useState<string>(
-    availablePages.current[0]?.id ?? ''
-  );
   const anilistHttpClient = useRef<AnilistHttpClient>(new AnilistHttpClient());
   const animeSearchModalRef = useRef<HTMLDivElement>(null);
   const searchBarRef = useRef<HTMLInputElement>(null);
@@ -92,27 +86,6 @@ export function AnimeSearchModal({
 
     browser.runtime
       .sendMessage({ type: 'initialise-skip-times' } as Message)
-      .catch(() => undefined);
-
-    if (!onClose) {
-      return;
-    }
-
-    onClose();
-  };
-
-  /**
-   * Fetches skips with manually selected page and player scripts.
-   */
-  const onFetchSkipsForSelectedScripts = (): void => {
-    browser.runtime
-      .sendMessage({
-        type: 'fetch-skips-for-page',
-        payload: {
-          pageId: selectedPageId,
-          playerId: getPlayerIdByPageId(selectedPageId),
-        },
-      } as Message)
       .catch(() => undefined);
 
     if (!onClose) {
@@ -211,28 +184,6 @@ export function AnimeSearchModal({
             Escape
           </Keyboard>
         </div>
-        <hr />
-        <div className="grid gap-3 px-4 py-4 sm:grid-cols-[1fr_auto]">
-          <select
-            className="min-w-0 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm"
-            value={selectedPageId}
-            onChange={(event): void => setSelectedPageId(event.target.value)}
-          >
-            {availablePages.current.map((availablePage) => (
-              <option key={availablePage.id} value={availablePage.id}>
-                {availablePage.label}
-              </option>
-            ))}
-          </select>
-          <button
-            className="rounded-md bg-amber-500 px-3 py-2 text-sm font-semibold text-white hover:bg-amber-600"
-            type="button"
-            onClick={onFetchSkipsForSelectedScripts}
-          >
-            Fetch skips
-          </button>
-        </div>
-        <hr />
         {isInitialOverlayOpen &&
           (animeDetected ? (
             <div className="flex flex-col space-y-4 overflow-y-auto px-4 py-6">

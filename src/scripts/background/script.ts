@@ -72,10 +72,7 @@ const messageHandler = (rawMessage: unknown, sender: any): Promise<any> => {
           return { error: error.message };
         }
 
-        if (
-          message.type === 'fetch-skips-for-page' ||
-          message.type === 'initialise-skip-times'
-        ) {
+        if (message.type === 'initialise-skip-times') {
           return {};
         }
 

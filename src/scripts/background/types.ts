@@ -161,8 +161,7 @@ export const DEFAULT_LOCAL_OPTIONS: LocalOptions = {
 export type MessageType =
   | 'fetch'
   | 'get-episode-information'
-  | 'initialise-skip-times'
-  | 'fetch-skips-for-page';
+  | 'initialise-skip-times';
 
 export type Message = {
   type: MessageType;
