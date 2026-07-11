@@ -6,7 +6,7 @@ import {
 } from './Keyboard.types';
 
 export function Keyboard<
-  TTag extends React.ElementType = typeof DEFAULT_KEYBOARD_TAG
+  TTag extends React.ElementType = typeof DEFAULT_KEYBOARD_TAG,
 >({
   as = DEFAULT_KEYBOARD_TAG as TTag,
   className = '',

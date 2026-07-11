@@ -1,0 +1,14 @@
+{
+  "variant": "ao",
+  "playerUrls": [
+    "*://*.animeonsen.xyz/watch/*"
+  ],
+  "selectorStrings": {
+    "default": {
+      "videoContainerSelectorString": "ao-player-media",
+      "videoControlsContainerSelectorString": "ao-player-controls",
+      "injectMenusButtonsReferenceNodeSelectorString": "Full screen",
+      "seekBarContainerSelectorString": "ao-player-seekbar"
+    }
+  }
+}

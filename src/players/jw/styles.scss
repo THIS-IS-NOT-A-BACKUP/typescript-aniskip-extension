@@ -66,7 +66,13 @@ $vidstream-hover-button-colour: #e50914;
   }
 
   &-button {
-    &--jw:not(&--vidstream, &--vidstreamz, &--vizcloud2, &--vizcloud, &--mcloud) {
+    &--jw:not(
+        &--vidstream,
+        &--vidstreamz,
+        &--vizcloud2,
+        &--vizcloud,
+        &--mcloud
+      ) {
       bottom: 5.5em;
     }
 

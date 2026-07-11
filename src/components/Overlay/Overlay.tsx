@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import {
   overlayClosed,
   overlayOpened,

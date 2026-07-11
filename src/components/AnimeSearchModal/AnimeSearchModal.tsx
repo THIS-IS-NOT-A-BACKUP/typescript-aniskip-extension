@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { debounce } from 'lodash';
 import { BiSearch } from 'react-icons/bi';
 import { AnilistHttpClient, MEDIA_FORMAT_NAMES } from '../../api';
@@ -65,7 +65,7 @@ export function AnimeSearchModal({
               format: searchResult.format,
               seasonYear: searchResult.seasonYear,
               coverImage: searchResult.coverImage.medium,
-            } as SearchResult)
+            }) as SearchResult
         );
 
       setSearchResults(results);
@@ -84,7 +84,9 @@ export function AnimeSearchModal({
     dispatch(malIdUpdated(malId));
     page?.storeManualTitleToMalIdMapping(malId);
 
-    browser.runtime.sendMessage({ type: 'initialise-skip-times' } as Message);
+    browser.runtime
+      .sendMessage({ type: 'initialise-skip-times' } as Message)
+      .catch(() => undefined);
 
     if (!onClose) {
       return;
@@ -139,9 +141,8 @@ export function AnimeSearchModal({
         return;
       }
 
-      const searchResponse = await anilistHttpClient.current?.searchCoverImage(
-        detectedMalId
-      );
+      const searchResponse =
+        await anilistHttpClient.current?.searchCoverImage(detectedMalId);
       const media = searchResponse.data.Media;
 
       const searchResult: SearchResult = {
@@ -183,7 +184,6 @@ export function AnimeSearchModal({
             Escape
           </Keyboard>
         </div>
-        <hr />
         {isInitialOverlayOpen &&
           (animeDetected ? (
             <div className="flex flex-col space-y-4 overflow-y-auto px-4 py-6">

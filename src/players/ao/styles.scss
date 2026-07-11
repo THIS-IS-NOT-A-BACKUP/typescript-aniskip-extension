@@ -1,0 +1,29 @@
+.submit,
+.vote {
+  &-menu-button--ao {
+    width: 36px;
+    height: 36px;
+
+    &:hover,
+    &.active {
+      background-color: rgb(255 255 255 / 0.16);
+    }
+  }
+}
+
+.player-buttons--ao {
+  gap: 2px;
+}
+
+.skip-indicators--ao {
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 9999px;
+  opacity: 0.85;
+}
+
+.menus--ao {
+  right: 1.25rem;
+  bottom: 8rem;
+}

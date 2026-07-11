@@ -1,6 +1,6 @@
 import ky from 'ky';
 import QueryString from 'qs';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { Response, HttpClient, Config } from './base-http-client.types';
 import { Message } from '../../scripts/background';
 import { parseResponse } from '../../utils/http';
@@ -30,7 +30,7 @@ export abstract class BaseHttpClient implements HttpClient {
         payload: { url, config },
       } as Message);
 
-      return response;
+      return response as Response<D>;
     }
 
     let response;
@@ -43,6 +43,14 @@ export abstract class BaseHttpClient implements HttpClient {
         ok: true,
       };
     } catch (err: any) {
+      if (!err.response) {
+        return {
+          data: { message: err.message } as D,
+          status: 0,
+          ok: false,
+        };
+      }
+
       response = {
         data: await parseResponse<D>(err.response),
         status: err.response.status,

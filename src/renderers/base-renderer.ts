@@ -56,13 +56,15 @@ export abstract class BaseRenderer implements Renderer {
 
     // Inject styles using inline webpack loaders.
     const tailwindcssStyle = document.createElement('style');
-    // eslint-disable-next-line import/no-webpack-loader-syntax, global-require
-    tailwindcssStyle.textContent = require(`!to-string-loader!css-loader?{"esModule":false,"sourceMap":false}!postcss-loader?{"postcssOptions":{"plugins":["postcss-import","tailwindcss","autoprefixer"]},"sourceMap":false}!tailwindcss/tailwind.css`);
+    tailwindcssStyle.textContent = require(
+      `!to-string-loader!css-loader?{"esModule":false,"sourceMap":false}!postcss-loader?{"postcssOptions":{"plugins":["postcss-import","tailwindcss","autoprefixer"]},"sourceMap":false}!tailwindcss/tailwind.css`
+    );
     shadowRoot.appendChild(tailwindcssStyle);
 
     const playerScriptStyle = document.createElement('style');
-    // eslint-disable-next-line import/no-webpack-loader-syntax, global-require
-    playerScriptStyle.textContent = require(`!to-string-loader!css-loader?{"esModule":false,"sourceMap":false}!sass-loader!../players/styles.scss`);
+    playerScriptStyle.textContent = require(
+      `!to-string-loader!css-loader?{"esModule":false,"sourceMap":false}!sass-loader!../players/styles.scss`
+    );
     shadowRoot.appendChild(playerScriptStyle);
 
     const reactRoot = document.createElement('div');

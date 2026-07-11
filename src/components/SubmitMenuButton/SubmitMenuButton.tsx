@@ -10,7 +10,11 @@ import {
 import { getDomainName, useDispatch } from '../../utils';
 import { SubmitMenuProps } from './SubmitMenuButton.types';
 
-export function SubmitMenuButton({ variant }: SubmitMenuProps): JSX.Element {
+// Wrapped with React.forwardRef to pass transition properties down cleanly
+export const SubmitMenuButton = React.forwardRef<
+  HTMLButtonElement,
+  SubmitMenuProps
+>(({ variant, ...props }, ref): JSX.Element => {
   const domainName = getDomainName(window.location.hostname);
   const isActive = useSelector(selectIsSubmitMenuVisible);
   const dispatch = useDispatch();
@@ -25,13 +29,17 @@ export function SubmitMenuButton({ variant }: SubmitMenuProps): JSX.Element {
 
   return (
     <PlayerButton
+      ref={ref} // Pass the ref onward to PlayerButton
       className={`submit-menu-button--${variant} submit-menu-button--${domainName} ${
         isActive ? 'active' : ''
       }`}
       title="Submit skip times"
       onClick={onClick}
+      {...props} // Forward animation attributes
     >
       <FaPlayCircle className="text-slate-100 w-1/2 h-full" />
     </PlayerButton>
   );
-}
+});
+
+SubmitMenuButton.displayName = 'SubmitMenuButton';
