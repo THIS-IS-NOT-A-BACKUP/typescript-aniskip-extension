@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { ColorResult } from 'react-color';
 import { debounce } from 'lodash';
 import { sprintf } from 'sprintf-js';
@@ -566,7 +566,7 @@ export function SettingsPage(): JSX.Element {
       <h2 className="text-xl text-gray-900 font-semibold mt-8">
         Miscellaneous options
       </h2>
-      <div className="space-y-2 mt-1">
+      <div className="space-y-2 mt-6">
         <div className="flex items-center justify-between">
           <div className="text-xs text-gray-700 uppercase font-semibold">
             Cache

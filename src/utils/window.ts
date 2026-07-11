@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 
 /**
  * Adds an event listener to the window.

@@ -67,7 +67,7 @@ const getPlayerUrls = () => {
     )
     .flat();
 
-  return playerUrls;
+  return [...new Set(playerUrls)];
 };
 
 module.exports = () => {
@@ -87,10 +87,6 @@ module.exports = () => {
     },
   ];
 
-  if (process.env.NODE_ENV === 'development') {
-    manifestTemplate.permissions.push('*://localhost/*');
-  }
-
   switch (browser) {
     case 'chromium':
       return merge(manifestTemplate, {
@@ -102,7 +98,12 @@ module.exports = () => {
           default_popup: 'popup.html',
           chrome_style: false,
         },
-        host_permissions: apiPermissions,
+        host_permissions: [
+          ...apiPermissions,
+          ...(process.env.NODE_ENV === 'development'
+            ? ['http://localhost:5000/*']
+            : []),
+        ],
         web_accessible_resources: [
           {
             resources: [windowProxyScript],
@@ -112,14 +113,15 @@ module.exports = () => {
       });
     case 'firefox':
       return merge(manifestTemplate, {
-        manifest_version: 2,
+        manifest_version: 3,
         background: {
+          service_worker: backgroundScript,
           scripts: [backgroundScript],
         },
         options_ui: {
           browser_style: false,
         },
-        browser_action: {
+        action: {
           default_popup: 'popup.html',
           browser_style: false,
         },
@@ -128,8 +130,13 @@ module.exports = () => {
             id: '{c67645fa-ad86-4b2f-ab7a-67fc5f3e9f5a}',
           },
         },
-        permissions: apiPermissions,
-        web_accessible_resources: [windowProxyScript],
+        host_permissions: apiPermissions,
+        web_accessible_resources: [
+          {
+            resources: [windowProxyScript],
+            matches: ['https://beta.crunchyroll.com/*'],
+          },
+        ],
       });
     default:
       throw new Error(`Invalid browser type '${browser}'`);

@@ -11,11 +11,7 @@ import { AniskipHttpClientError } from './error';
 
 export class AniskipHttpClient extends BaseHttpClient {
   constructor() {
-    super(
-      process.env.NODE_ENV === 'development'
-        ? 'http://localhost:5000/v2'
-        : 'https://api.aniskip.com/v2'
-    );
+    super('https://api.aniskip.com/v2');
   }
 
   /**

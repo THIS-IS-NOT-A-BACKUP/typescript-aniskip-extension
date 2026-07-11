@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { browser } from 'webextension-polyfill-ts';
 import { FaBackward, FaForward, FaPlay, FaTimes } from 'react-icons/fa';
+import browser from 'webextension-polyfill';
 import {
   AniskipHttpClientErrorCode,
   SkipTime,
@@ -149,11 +149,17 @@ export function SubmitMenu(): JSX.Element {
       return;
     }
 
-    const { userId } = await browser.storage.sync.get('userId');
+    const { userId } = (await browser.storage.sync.get('userId')) as {
+      userId: string;
+    };
     const { malId, episodeNumber, providerName } =
-      await browser.runtime.sendMessage({
+      (await browser.runtime.sendMessage({
         type: 'get-episode-information',
-      } as Message);
+      } as Message)) as {
+        malId: number;
+        episodeNumber: number;
+        providerName: string;
+      };
     const duration = player?.getDuration() ?? 0;
 
     const startTimeSeconds = timeStringToSeconds(startTime);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { SkipButton } from '../SkipButton';
 import {
   isInInterval,
@@ -27,11 +27,10 @@ export function SkipButtonContainer(): JSX.Element | null {
    */
   useEffect(() => {
     const initialiseSkipOptions = async (): Promise<void> => {
-      const currentSkipOptions = (
-        await browser.storage.sync.get({
+      const { skipOptions: currentSkipOptions } =
+        (await browser.storage.sync.get({
           skipOptions: DEFAULT_SKIP_OPTIONS,
-        })
-      ).skipOptions;
+        })) as { skipOptions: SkipOptions };
 
       setSkipOptions(currentSkipOptions);
     };

@@ -1,4 +1,4 @@
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { Message } from '../scripts/background';
 
 /**
@@ -12,7 +12,9 @@ export const waitForMessage = (uuid: string): Promise<Message | undefined> =>
       resolve(undefined);
     }, 2000);
 
-    const handler = (message: Message): void => {
+    const handler = (rawMessage: unknown): void => {
+      const message = rawMessage as Message;
+
       if (message.uuid === uuid) {
         clearTimeout(timeout);
         resolve(message);

@@ -28,9 +28,9 @@ import { SearchboxProvider, useSearchboxRef } from './Searchbox.utils';
 
 export function Searchbox<
   TTag extends React.ElementType = typeof DEFAULT_SEARCHBOX_TAG,
-  TValue = any
+  TValue = any,
 >({
-  // @ts-ignore: This component is replaced with native combobox in a future PR
+  // @ts-expect-error: This component is replaced with native combobox in a future PR.
   as = DEFAULT_SEARCHBOX_TAG,
   children,
   value,
@@ -120,6 +120,8 @@ const Input = React.forwardRef(
   }
 );
 
+Input.displayName = 'Searchbox.Input';
+
 function Options<TTag extends React.ElementType = typeof DEFAULT_OPTIONS_TAG>({
   as = DEFAULT_OPTIONS_TAG as TTag,
   ...props
@@ -129,7 +131,7 @@ function Options<TTag extends React.ElementType = typeof DEFAULT_OPTIONS_TAG>({
 
 function Option<
   TTag extends React.ElementType = typeof DEFAULT_OPTION_TAG,
-  TValue = any
+  TValue = any,
 >({
   as = DEFAULT_OPTION_TAG as TTag,
   className,

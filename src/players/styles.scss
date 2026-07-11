@@ -1,9 +1,9 @@
 @use 'crunchyroll/styles' as *;
 @use 'jw/styles' as *;
 @use 'plyr/styles' as *;
-@use 'twistmoe/styles' as *;
 @use 'videojs/styles' as *;
 @use 'flowplayer/styles' as *;
+@use 'ao/styles' as *;
 
 // Override custom player styles.
 :host {

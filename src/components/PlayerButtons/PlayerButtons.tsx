@@ -26,11 +26,14 @@ export function PlayerButtons(): JSX.Element {
    *
    * @param value New hover value.
    */
-  const onMouseEvent = (value: boolean) => () => setIsHovered(value);
+  const onMouseEvent =
+    (value: boolean): (() => void) =>
+    () =>
+      setIsHovered(value);
 
   return (
     <div
-      className={`hidden sm:flex items-center justify-center player-buttons--${variant} player-buttons--${domainName} ${
+      className={`flex items-center justify-center player-buttons--${variant} player-buttons--${domainName} ${
         isFullscreen ? 'flex' : ''
       }`}
       onMouseEnter={onMouseEvent(true)}

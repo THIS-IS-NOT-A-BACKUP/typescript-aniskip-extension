@@ -3,8 +3,6 @@ import { InputProps } from './Input.types';
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    // False positive.
-    // eslint-disable-next-line react/prop-types
     { className = '', ...props }: InputProps,
     ref: React.ForwardedRef<HTMLInputElement>
   ): JSX.Element => (
@@ -17,3 +15,5 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     />
   )
 );
+
+Input.displayName = 'Input';

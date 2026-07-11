@@ -2,13 +2,13 @@ import globToRegExp from 'glob-to-regexp';
 import { Videojs } from './videojs';
 import { Jw } from './jw';
 import { Plyr } from './plyr';
-import { Twistmoe } from './twistmoe';
 import { Crunchyroll } from './crunchyroll';
 import { Flowplayer } from './flowplayer';
 import { Player } from './base-player.types';
+import { Ao } from './ao';
 
 export class PlayerFactory {
-  static players = [Crunchyroll, Jw, Plyr, Twistmoe, Videojs, Flowplayer];
+  static players = [Crunchyroll, Jw, Plyr, Videojs, Flowplayer, Ao];
 
   /**
    * Obtains the player object from the domain.

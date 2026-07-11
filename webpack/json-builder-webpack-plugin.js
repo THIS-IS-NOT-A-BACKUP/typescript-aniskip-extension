@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { validate } = require('schema-utils');
+const { Compilation, sources } = require('webpack');
 
 const schema = {
   type: 'object',
@@ -26,16 +27,26 @@ class JsonBuilderPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.compilation.tap('JsonBuilderPlugin', (compilation) => {
+    compiler.hooks.thisCompilation.tap('JsonBuilderPlugin', (compilation) => {
       const { output, json } = this.options;
 
       const jsonString = JSON.stringify(json);
+      const source = new sources.RawSource(jsonString);
 
-      // eslint-disable-next-line no-param-reassign
-      compilation.assets[output] = {
-        source: () => jsonString,
-        size: () => jsonString.length,
-      };
+      compilation.hooks.processAssets.tap(
+        {
+          name: 'JsonBuilderPlugin',
+          stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+        },
+        () => {
+          if (compilation.getAsset(output)) {
+            compilation.updateAsset(output, source);
+            return;
+          }
+
+          compilation.emitAsset(output, source);
+        }
+      );
     });
   }
 }

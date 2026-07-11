@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { browser } from 'webextension-polyfill-ts';
+import browser from 'webextension-polyfill';
 import { selectPreviewSkipTime, selectSkipTimes } from '../../data';
 import {
   DEFAULT_SKIP_TIME_INDICATOR_COLOURS,
